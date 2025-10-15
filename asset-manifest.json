@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/react-pizza/static/css/main.236b13b9.css",
+    "main.js": "/react-pizza/static/js/main.d3935964.js",
+    "static/media/Group.png": "/react-pizza/static/media/Group.e22ea82fe165380542e8.png",
+    "static/media/banner.png": "/react-pizza/static/media/banner.fade60a21af5d3374014.png",
+    "static/media/AvenirNextCyr-Demi.eot": "/react-pizza/static/media/AvenirNextCyr-Demi.4b2189c473c87dbf4d5d.eot",
+    "static/media/AvenirNextCyr-Demi.ttf": "/react-pizza/static/media/AvenirNextCyr-Demi.c234f5295ae22b8b0e28.ttf",
+    "static/media/AvenirNextCyr-Demi.woff": "/react-pizza/static/media/AvenirNextCyr-Demi.4a392b4ac7128c077b27.woff",
+    "static/media/AvenirNextCyr-Demi.woff2": "/react-pizza/static/media/AvenirNextCyr-Demi.f033b66b803cabbd66b5.woff2",
+    "static/media/smile.svg": "/react-pizza/static/media/smile.908d3b27e4742634180df43ff313473d.svg",
+    "static/media/logo.svg": "/react-pizza/static/media/logo.8c9da69c471af923e406288ef78d960d.svg",
+    "static/media/instagram.svg": "/react-pizza/static/media/instagram.91c872aeaad847a0ce9db3356c393420.svg",
+    "static/media/done-icon.svg": "/react-pizza/static/media/done-icon.ec51e25664401524a6d76be464bd60da.svg",
+    "static/media/linkedin.svg": "/react-pizza/static/media/linkedin.f4bdcaaaa232c890b9920ccd0606d580.svg",
+    "index.html": "/react-pizza/index.html",
+    "static/media/facebook.svg": "/react-pizza/static/media/facebook.0a6c28c33c03b3c9b015668e7bd64ab2.svg",
+    "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.32e7d8c0a9addb9f7b2cf7eaa08e4c7e.svg",
+    "static/media/plus.svg": "/react-pizza/static/media/plus.8e1af1c6c59b6f378abd1bba7964246e.svg",
+    "static/media/minus.svg": "/react-pizza/static/media/minus.77eb0172bd1aeb531f6f83f6a755374d.svg",
+    "main.236b13b9.css.map": "/react-pizza/static/css/main.236b13b9.css.map",
+    "main.d3935964.js.map": "/react-pizza/static/js/main.d3935964.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.236b13b9.css",
+    "static/js/main.d3935964.js"
+  ]
+}

@@ -94,7 +94,9 @@ const Header = ({
                            <a href="mailto:yumbox.lutsk@gmail.com">yumbox.lutsk@gmail.com</a>
                         </div>
                         <div className="contacts__phone">
-                           <a href="tel: +380 93 823 92 93"> +380 93 823 92 93</a></div></div>
+                           <a href="tel: +380 93 823 92 93"> +380 93 823 92 93</a>
+                        </div>
+                     </div>
                      <div className="d-flex align-items-center mb-2 social-media">
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                            <img src={linkedinIcon} alt="LinkedIn" className="me-2" />
@@ -118,7 +120,7 @@ const Header = ({
                   <div className="basket__quantity">
                      <div>{totalItems}</div>
                   </div>
-                  <div className="basket__sum">{totalPrice.toFixed(2)} грн</div>
+                  <div className="basket__sum">{totalPrice.toFixed()} грн</div>
                </div>
                {cartOpen && (
                   <div className="shop-cart">
@@ -147,7 +149,7 @@ const Header = ({
                                  className="order-summary__button-action"
                                  onClick={onCheckout}
                               >
-                                 оформити за {totalPrice.toFixed(2)} &#8372;
+                                 оформити за {totalPrice.toFixed()} &#8372;
                               </button>
                            </div>
                         </div>

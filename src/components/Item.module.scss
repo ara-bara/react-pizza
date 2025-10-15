@@ -1,34 +1,44 @@
 @use "./Mixin" as *;
 
 .item {
-   .itemTitleAndSubtitle {
-      margin-top: 19px;
+   position: relative;
+   margin: 0 10px 20px 10px;
+   height: 390px;
+   border: 1px solid hsla(0, 0%, 100%, .04);
+   border-radius: 20px;
+   background-color: #262323;
+   /*&:hover{
+      border: 1px solid #fff;
+      background-color: #2C2C2C;}*/
+      img{
+         width:100%;
+         height: auto;
+         border-radius: 20px;
+      }
+   .itemTitle {
+      margin-top: 5px;
       margin-left: 2px;
-
-      h2 {
-         color: #FFFFFF;
-         margin-bottom: 0;
-         @include text-styles(24px, 600, 0);
-         line-height: 24px;
-      }
-
-      .item-subtitle {
-         margin-top: -5px;
-      }
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      @include text-styles(24px, 600, 0);
+      line-height: 24px;
    }
 
-   p {
+   .itemDescription{
+      .itemWeight{
+         color: red;
+      }
+      span {
       @include text-styles(13px, 500, 0);
       margin: 19px 0 0 3px;
       color: gray;
+      }
    }
 
    .priceContainer {
       cursor: pointer;
       padding: 32px 0;
-      margin: 19px 0 50px 0;
       border-radius: 32px;
-      position: relative;
 
       h2 {
          @include centering;
@@ -38,16 +48,19 @@
          @include price-incart;
          @include text-styles(18px, 600, 0);
          opacity: 1;
-         bottom: 20%;
+         bottom: 9%;
          left: 38%;
+         h2{
+            text-align: center;
+            width: 100%;
+         }
       }
 
       .addToCart {
          @include price-incart;
          @include text-styles(16px, 500, 0);
          opacity: 0;
-         left: 24.75%;
-         bottom: 12.1%;
+         @include plb(24.75, 30px);
          transition: opacity 0.3s ease;
       }
 
@@ -56,8 +69,15 @@
          @include text-styles(16px, 400, 0);
          opacity: 1;
          @include border-styles;
-         @include centering;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
          gap: 1%;
+         bottom: 7%;
+         img{
+            height: 24px;
+            width: 24px;
+         }
 
          span {
             font-weight: 600;
@@ -71,12 +91,13 @@
 
          .addToCart {
             opacity: 1;
+            bottom: 4.8%;
             @include border-styles;
          }
       }
    }
 }
-
+/*
 .item-1 {
    transform: translateX(-2px);
 }
@@ -111,7 +132,7 @@
 .item-8 {
    margin-bottom: 40px;
    transform: translateX(92px);
-}
+}*/
 
 @media (max-width: 1300px) {
    .item {

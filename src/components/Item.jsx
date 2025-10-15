@@ -16,13 +16,13 @@ export class Item extends Component {
             <img
                src={process.env.PUBLIC_URL + "/img/" + item.img}
                alt={item.title}
-               className={`${styles.itemImg} ${styles[`item-img-${item.id}`]}`}
+               className={`${styles.itemImg}`}
             />
-            <div className={`${styles.itemTitleAndSubtitle} ${styles[`item-title-and-subtitle-${item.id}`]}`}>
-               <h2 className={`${styles.itemTitle} ${styles[`item-title-${item.id}`]}`}>{item.title}</h2>
-               <h2 className={`${styles.itemSubtitle} ${styles[`item-subtitle-${item.id}`]}`}>{item.subtitle}</h2>
+            <div className={`${styles.itemTitle}`}>{item.title}</div>
+            <div className={`${styles.itemDescription}`}>
+               <span className={`${styles.itemWeight}`}>{item.weight}</span>
+               <span className={`${styles.itemIngredients}`}>{item.ingredients}</span>
             </div>
-            <p className={`${styles.itemWeight} ${styles[`item-weight-${item.id}`]}`}>{item.weight}</p>
             <div className={styles.priceContainer}>
                {isInCart ? (
                   <div className={styles.inCart} onClick={onOpenCart}>
@@ -31,7 +31,7 @@ export class Item extends Component {
                         alt="Done"
                         className="doneIcon"
                      />
-                     В кошику <span> {itemInCart.quantity} </span>  шт за  <span>{finalPrice.toFixed(2)} </span> грн
+                     В кошику <span> {itemInCart.quantity} </span>  шт за  <span>{finalPrice.toFixed()} </span> грн
                   </div>
                ) : (
                   <>

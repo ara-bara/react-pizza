@@ -28,14 +28,19 @@
    transition: opacity 0.3s ease;
 }
 
+@mixin plb($l, $b){
+   left: $l;
+   bottom: $b;
+}
+
 @mixin border-styles {
-   border: 2px solid #FFFFFF;
+   border: 1px solid #FFFFFF;
    border-radius: 63px;
    padding: 5px 10px;
-   width: 296px;
-   height: 67px;
-   top: 0;
-   left: 0;
+   width: 260px;
+   height: 60px;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 @mixin centering {

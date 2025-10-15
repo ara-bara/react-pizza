@@ -13,92 +13,110 @@ class App extends React.Component {
       items: [
         {
           id: 1,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Каріна',
+          ingredients: 'вершки, сир, шинка, курка, печериці, кукурудза',
+          img: 'karina.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '600 грам - ',
+          price: 265
         },
         {
           id: 2,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Гавайська',
+          ingredients: 'курка, вершки, ананас, сир',
+          img: 'gavai.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '560 грам - ',
+          price: 263
         },
         {
           id: 3,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Бланкос',
+          ingredients: 'орегано, томатний соус, сир, салямі, шинка, зелень, вершки після печі',
+          img: 'blankos.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '600 грам - ',
+          price: 267
         },
         {
-          id: 4,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+         id: 4,
+          title: '5 сирів',
+          ingredients: 'вершки, моцарела, дорблю, пармезан, чеддер, фета',
+          img: '5cheese.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '575 грам - ',
+          price: 266
         },
         {
           id: 5,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Войт',
+          ingredients: ' вершки, сир, салямі, шинка, курка, кукурудза, помідори чері',
+          img: 'voit.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '710 грам - ',
+          price: 276
         },
         {
           id: 6,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Маргарита',
+          ingredients: ' орегано, томатний соус, сир',
+          img: 'margarita.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '440 грам - ',
+          price: 240
         },
         {
           id: 7,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Курка BBQ',
+          ingredients: 'орегано, томатний соус, сир, печериці, курка, перець, соус барбекю',
+          img: 'chickenBBQ.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
+          weight: '600 грам - ',
+          price: 264
         },
         {
           id: 8,
-          title: 'Yumbox',
-          subtitle: '21 сет',
-          description_part1: "суперкачний",
-          description_part2: "суперсет",
-          img: 'item.svg',
+          title: 'Салмон',
+          ingredients: 'вершково-шпинатний соус, сир, лосось, маслини, крем-сир, рукола',
+          img: 'salmon.webp',
           picture: 'picture.svg',
-          weight: '1500 гр',
-          price: 799
-        }
+          weight: '650 грам - ',
+          price: 347
+        },{
+          id: 9,
+          title: 'Опера',
+          ingredients: 'орегано, томатний соус, сир, тунець, цибуля, помідори чері, рукола',
+          img: 'opera.webp',
+          picture: 'picture.svg',
+          weight: '590 грам - ',
+          price: 290
+        },
+        {
+          id: 10,
+          title: 'Везувіо',
+          ingredients: 'орегано, томатний соус, сир, шинка',
+          img: 'vesuvio.webp',
+          picture: 'picture.svg',
+          weight: '500 грам - ',
+          price: 244
+        },{
+          id: 11,
+          title: 'Броколі',
+          ingredients: 'орегано, томатний соус, сир, салямі, броколі',
+          img: 'brokoly.webp',
+          picture: 'picture.svg',
+          weight: '630 грам - ',
+          price: 263
+        },
+        {
+          id: 12,
+          title: 'Гавайська',
+          ingredients: 'курка, вершки, ананас, сир',
+          img: 'gavai.avif',
+          picture: 'picture.svg',
+          weight: '613 грам - ',
+          price: 287
+        },
       ],
     };
     this.addToOrder = this.addToOrder.bind(this);

@@ -1,50 +1,60 @@
 @mixin wh($width, $height) {
-   width: $width;
-   height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin posa($in) {
-   position: absolute;
-   z-index: $in;
+  position: absolute;
+  z-index: $in;
+}
+
+@mixin field {
+  width: 220px;
+  color: grey;
+  cursor: pointer;
+  background: 222222px;
+  border-radius: 10px;
+  padding: 7px;
+  border: 1px solid hsla(0, 0%, 100%, 0.04);
 }
 
 @mixin sbtn {
-   top: 44.2%;
-   cursor: pointer;
-   @include posa(10);
+  top: 44.2%;
+  cursor: pointer;
+  @include posa(10);
 }
 
 @mixin text-styles($size, $weight, $translateX) {
-   font-size: $size;
-   font-weight: $weight;
-   transform: translateX($translateX);
-   font-family: "Montserrat", serif;
+  font-size: $size;
+  font-weight: $weight;
+  transform: translateX($translateX);
+  font-family: "Montserrat", serif;
 }
 
 @mixin price-incart {
-   color: #FFFFFF;
-   @include posa(4);
-   left: 38.4%;
-   transition: opacity 0.3s ease;
+  color: #ffffff;
+  @include posa(4);
+  left: 38.4%;
+  transition: opacity 0.3s ease;
 }
 
-@mixin plb($l, $b){
-   left: $l;
-   bottom: $b;
+@mixin plb($l, $b) {
+  left: $l;
+  bottom: $b;
 }
 
 @mixin border-styles {
-   border: 1px solid #FFFFFF;
-   border-radius: 63px;
-   padding: 5px 10px;
-   width: 260px;
-   height: 60px;
-   left: 50%;
-   transform: translateX(-50%);
+  border: 1px solid #ffffff;
+  border-radius: 63px;
+  padding: 5px 10px;
+  width: 260px;
+  height: 60px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @mixin centering {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

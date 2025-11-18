@@ -6,6 +6,8 @@
    position: relative;
    height: 100%;
    padding-bottom: 50px;
+   border-left: 1px solid hsla(0, 0%, 100%, .04);
+   border-right: 1px solid hsla(0, 0%, 100%, .04);
 
    @media (max-width: 1300px) {
       width: 90%;
@@ -62,7 +64,7 @@
       overflow-y: auto;
       z-index: 20;
       right: 0;
-      top: 121px;
+      top: 106px;
       height: calc(100% - 121px);
       overflow-y: auto;
       color: #FFFFFF;

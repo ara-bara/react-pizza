@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../img/logo.svg";
+import logo from "../img/logo.webp";
 import Order from "./Order";
 import closeIcon from "../img/close-icon.svg";
 import linkedinIcon from "../img/linkedin.svg";
@@ -70,8 +70,8 @@ const Header = ({
                <img
                   src={logo}
                   style={{ marginLeft: "32px" }}
-                  width="114px"
-                  height="72.41px"
+                  width="250px"
+                  height="57px"
                   className="d-inline-block align-top"
                   alt="logo"
                />
@@ -120,7 +120,7 @@ const Header = ({
                   <div className="basket__quantity">
                      <div>{totalItems}</div>
                   </div>
-                  <div className="basket__sum">{totalPrice.toFixed()} грн</div>
+                  <div className="basket__sum">{totalPrice.toFixed(0)} грн</div>
                </div>
                {cartOpen && (
                   <div className="shop-cart">
@@ -149,7 +149,7 @@ const Header = ({
                                  className="order-summary__button-action"
                                  onClick={onCheckout}
                               >
-                                 оформити за {totalPrice.toFixed()} &#8372;
+                                 оформити за {totalPrice.toFixed(0)} &#8372;
                               </button>
                            </div>
                         </div>

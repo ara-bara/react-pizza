@@ -1,101 +1,103 @@
 @use "./Mixin" as *;
 
+
 .item {
-   position: relative;
-   margin: 0 10px 20px 10px;
-   height: 390px;
-   border: 1px solid hsla(0, 0%, 100%, .04);
-   border-radius: 20px;
-   background-color: #262323;
-   /*&:hover{
+  position: relative;
+  margin: 0 10px 20px 10px;
+  height: 390px;
+  border: 1px solid hsla(0, 0%, 100%, 0.04);
+  border-radius: 20px;
+  background-color: #262323;
+
+  /*&:hover{
       border: 1px solid #fff;
       background-color: #2C2C2C;}*/
-      img{
-         width:100%;
-         height: auto;
-         border-radius: 20px;
-      }
-   .itemTitle {
-      margin-top: 5px;
-      margin-left: 2px;
-      color: #FFFFFF;
-      margin-bottom: 6px;
-      @include text-styles(24px, 600, 0);
-      line-height: 24px;
-   }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  .itemTitle {
+    margin-top: 5px;
+    margin-left: 2px;
+    color: #ffffff;
+    margin-bottom: 6px;
+    @include text-styles(24px, 600, 0);
+    line-height: 24px;
+  }
 
-   .itemDescription{
-      .itemWeight{
-         color: red;
-      }
-      span {
+  .itemDescription {
+    .itemWeight {
+      color: red;
+    }
+    span {
       @include text-styles(13px, 500, 0);
       margin: 19px 0 0 3px;
       color: gray;
-      }
-   }
+    }
+  }
 
-   .priceContainer {
-      cursor: pointer;
-      padding: 32px 0;
-      border-radius: 32px;
+  .priceContainer {
+    cursor: pointer;
+    padding: 32px 0;
+    border-radius: 32px;
 
+    h2 {
+      @include centering;
+    }
+
+    .itemPrice {
+      @include price-incart;
+      @include text-styles(18px, 600, 0);
+      opacity: 1;
+      bottom: 9%;
+      left: 38%;
       h2 {
-         @include centering;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .addToCart {
+      @include price-incart;
+      @include text-styles(16px, 500, 0);
+      opacity: 0;
+      @include plb(24.75, 30px);
+      transition: opacity 0.3s ease;
+    }
+
+    .inCart {
+      @include price-incart;
+      @include text-styles(16px, 400, 0);
+      opacity: 1;
+      @include border-styles;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1%;
+      bottom: 7%;
+      img {
+        height: 24px;
+        width: 24px;
       }
 
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
       .itemPrice {
-         @include price-incart;
-         @include text-styles(18px, 600, 0);
-         opacity: 1;
-         bottom: 9%;
-         left: 38%;
-         h2{
-            text-align: center;
-            width: 100%;
-         }
+        opacity: 0;
       }
 
       .addToCart {
-         @include price-incart;
-         @include text-styles(16px, 500, 0);
-         opacity: 0;
-         @include plb(24.75, 30px);
-         transition: opacity 0.3s ease;
+        opacity: 1;
+        bottom: 4.8%;
+        @include border-styles;
       }
-
-      .inCart {
-         @include price-incart;
-         @include text-styles(16px, 400, 0);
-         opacity: 1;
-         @include border-styles;
-         display: flex;
-         justify-content: space-around;
-         align-items: center;
-         gap: 1%;
-         bottom: 7%;
-         img{
-            height: 24px;
-            width: 24px;
-         }
-
-         span {
-            font-weight: 600;
-         }
-      }
-
-      &:hover {
-         .itemPrice {
-            opacity: 0;
-         }
-
-         .addToCart {
-            opacity: 1;
-            bottom: 4.8%;
-            @include border-styles;
-         }
-      }
-   }
+    }
+  }
 }
 /*
 .item-1 {
@@ -134,51 +136,53 @@
    transform: translateX(92px);
 }*/
 
+.item-12 {
+  img {
+    width: 200px;
+  }
+}
+
 @media (max-width: 1300px) {
-   .item {
-      .priceContainer {
-
-         &:hover .addToCart,
-         .itemPrice,
-         .inCart {
-            left: 50%;
-            transform: translateX(-50%);
-         }
+  .item {
+    .priceContainer {
+      &:hover .addToCart,
+      .itemPrice,
+      .inCart {
+        left: 50%;
+        transform: translateX(-50%);
       }
-   }
+    }
+  }
 
-   .item-4,
-   .item-7 {
-      transform: translateX(0px);
-   }
+  .item-4,
+  .item-7 {
+    transform: translateX(0px);
+  }
 
-   .item-5,
-   .item-8 {
-      margin-bottom: 40px;
-      transform: translateX(29px);
-   }
+  .item-5,
+  .item-8 {
+    margin-bottom: 40px;
+    transform: translateX(29px);
+  }
 
-   .item-6 {
-      margin-bottom: 40px;
-      transform: translateX(61px);
-   }
-
+  .item-6 {
+    margin-bottom: 40px;
+    transform: translateX(61px);
+  }
 }
 
 @media (max-width: 1200px) {
+  .item {
+    transform: translateX(0px);
 
-   .item {
-      transform: translateX(0px);
-
-      .priceContainer {
-         margin-bottom: 15px;
-      }
-   }
+    .priceContainer {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 @media (max-width: 340px) {
-
-   .item {
-      transform: translateX(-8px);
-   }
+  .item {
+    transform: translateX(-8px);
+  }
 }

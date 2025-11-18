@@ -34,7 +34,7 @@ export class Order extends Component {
                </div>
             </div>
             <div className='order-price'>
-               <h2>{finalPrice.toFixed()} <span>&#8372;</span></h2>
+               <h2>{finalPrice.toFixed(0)} <span>&#8372;</span></h2>
                <div className='quantity-control'>
                   <div className='quantity-control__container'>
                      <img

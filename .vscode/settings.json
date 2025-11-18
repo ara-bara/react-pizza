@@ -1,0 +1,19 @@
+{
+  // 🔄 Автозбереження
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // 🎨 Форматування Prettier
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // ✅ ESLint автофікс (оновлений синтаксис)
+  "editor.codeActionsOnSave": [
+    "source.fixAll",
+    "source.organizeImports"
+  ],
+
+  // 💡 Додаткове форматування
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true
+}

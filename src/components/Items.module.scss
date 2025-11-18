@@ -1,34 +1,37 @@
 @use "./Mixin" as *;
 
-
 .main {
-   text-align: center;
-   font-family: "Montserrat", serif;
+  text-align: center;
+  font-family: "Montserrat", serif;
 
-   h1 {
-      color: #FFFFFF;
-      margin: 93px 0 72px 14px;
-      @include text-styles(20px, 500, -8px);
+  .filterForm {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 
-      @media (max-width: 992px) {
-         margin: 50px 0 0 14px;
-      }
-   }
+    .searchInput {
+      @include field;
+    }
+
+    .searchSelect {
+      @include field;
+    }
+  }
 }
 
 .containerCustom {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 
-   @media (max-width: 1300px) {
-      grid-template-columns: repeat(3, 1fr);
-   }
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-   @media (max-width: 1200px) {
-      grid-template-columns: repeat(2, 50%);
-   }
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 50%);
+  }
 
-   @media (max-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
-   }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

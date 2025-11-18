@@ -1,0 +1,66 @@
+@use "/src/components/Mixin.scss" as *;
+
+form {
+  margin: 30px 0;
+
+  .customSelect {
+    position: relative;
+  }
+
+  .options {
+    position: absolute;
+    border-radius: 20px;
+    background-color: #1c1a1a;
+    top: 69px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .option {
+    padding: 10px 15px;
+    transition: background 0.2s;
+    &:hover {
+      background: #262329;
+    }
+  }
+}
+
+/*
+.customSelect {
+  position: relative;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+
+  .selected {
+    padding: 10px 15px;
+  }
+
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #333;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .option {
+    padding: 10px 15px;
+    transition: background 0.2s;
+    &:hover {
+      background: #444;
+    }
+  }
+
+  &.open {
+    border-radius: 10px 10px 0 0;
+  }
+}
+*/

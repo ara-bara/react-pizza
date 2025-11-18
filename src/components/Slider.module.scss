@@ -6,37 +6,23 @@ body {
    background-color: #1c1a1a;
 }
 
-.smile {
-   top: -1%;
-   left: 5.4%;
-   @include wh(263px, 263px);
-   @include posa(7);
-}
 
 .sliderWrapper {
-   margin: 126px 0 0 0;
-   border-radius: 24.44px;
-   background-color: #222222;
-   padding-left: 37px;
    position: relative;
+   overflow: hidden;
    z-index: 2;
    @include wh(1276px, 503px);
+   margin-bottom: 30px;
+   img{ 
+      max-width: 100%;
+      height: auto;
+   }
 }
 
 .bullet {
    background-color: gray;
    cursor: pointer;
    @include wh(9px, 9px);
-}
-
-.prevButton {
-   left: 0.66%;
-   @include sbtn;
-}
-
-.nextButton {
-   right: 0.77%;
-   @include sbtn;
 }
 
 .customPagination {

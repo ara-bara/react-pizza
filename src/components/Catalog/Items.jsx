@@ -1,41 +1,21 @@
-import { useEffect, useState } from "react";
-import Item from "./Item";
+import MySelect from "../../UI/select/MySelect";
+import { useFilterSort } from "../../hooks/useFilterSort";
+import ItemCard from "./ItemCard.jsx";
+
 import styles from "./Items.module.scss";
-import MySelect from "./UI/select/MySelect";
 
-function Items({ items, onAdd, orders, onOpenCart, discount }) {
-  const [selectedSort, setSelectedSort] = useState("");
-  const [filterText, setFilterText] = useState("");
-  const [filteredItems, setFilteredItems] = useState(items);
-
-  useEffect(() => {
-    let result = [...items];
-
-    // 🔍 фільтрація
-    if (filterText.trim() !== "") {
-      result = result.filter((item) =>
-        item.title.toLowerCase().includes(filterText.toLowerCase())
-      );
-    }
-
-    // 📊 сортування
-    if (selectedSort) {
-      result.sort((a, b) => {
-        if (selectedSort === "price" || selectedSort === "weight") {
-          return a[selectedSort] - b[selectedSort];
-        } else {
-          return a[selectedSort].localeCompare(b[selectedSort]);
-        }
-      });
-    }
-
-    setFilteredItems(result);
-  }, [items, filterText, selectedSort]);
+const Items = ({ items, onAdd, orders, onOpenCart, discount }) => {
+  const {
+    selectedSort,
+    setSelectedSort,
+    filterText,
+    setFilterText,
+    filteredItems,
+  } = useFilterSort(items);
 
   return (
     <main className={styles.main}>
       <form className={styles.filterForm}>
-        {/* 🧠 Input для пошуку */}
         <input
           type="text"
           placeholder="Знайти..."
@@ -44,7 +24,6 @@ function Items({ items, onAdd, orders, onOpenCart, discount }) {
           className={styles.searchInput}
         />
 
-        {/* 🔽 Select для сортування */}
         <MySelect
           value={selectedSort}
           onChange={(sort) => setSelectedSort(sort)}
@@ -61,7 +40,7 @@ function Items({ items, onAdd, orders, onOpenCart, discount }) {
       <div className={styles.containerCustom}>
         {filteredItems.length > 0 ? (
           filteredItems.map((el) => (
-            <Item
+            <ItemCard
               key={el.id}
               item={el}
               onAdd={onAdd}
@@ -76,6 +55,6 @@ function Items({ items, onAdd, orders, onOpenCart, discount }) {
       </div>
     </main>
   );
-}
+};
 
 export default Items;

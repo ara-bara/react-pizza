@@ -1,0 +1,190 @@
+.shop-cart {
+  width: 469px;
+  background-color: #1c1a1a;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 20;
+  right: 0;
+  top: 106px;
+  height: calc(100% - 121px);
+  overflow-y: auto;
+  color: #ffffff;
+  padding: 0 28px 0 29px;
+  font-family: "Avenir Next Cyr";
+  padding-bottom: 167px;
+}
+
+.cart-header {
+  display: flex;
+  margin: 31px 0px 11px 1px;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  img {
+    margin-left: 242px;
+    margin-top: 17px;
+  }
+
+  img:hover {
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .close-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.order {
+  border-radius: 12px;
+  background-color: #222222;
+  padding-top: 19px;
+  .delete-icon {
+            img {
+               transition: transform 0.3s ease-in-out;
+               cursor: pointer;
+               margin: 0 6px 7px 0;
+            }
+
+            &:hover img {
+               transform: scale(1.3);
+            }
+         }
+}
+
+.order-info {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #000000;
+
+  &__img img {
+    margin-bottom: 18px;
+    width: 43.126px;
+    height: 47.19px;
+    border-radius: 4.26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__text p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .delete-icon {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 10px 6px 7px 0;
+    img {
+      &:hover img {
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+
+.order-price {
+  display: flex;
+  margin-bottom: 8px;
+  padding: 12px 0 4px 19px;
+  position: relative;
+
+  h2 {
+    font-size: 22px;
+
+    span {
+      opacity: 0.7;
+      font-family: "Montserrat", serif;
+    }
+  }
+
+  .quantity-control {
+    position: absolute;
+    right: 3.8%;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #555;
+    padding: 4px 10px;
+    gap: 17px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    width: 98.68541717529297px;
+    height: 32.44px;
+    transform: translateY(-2px);
+
+    img {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}
+
+.order-summary {
+  background-color: #222222;
+  width: 469px;
+  height: 167px;
+  border-radius: 31px 31px 0 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-family: "Avenir Next Cyr";
+  font-size: 18px;
+  font-weight: 600;
+
+  .order-summary__delivery {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .order-summary__button {
+    margin: 20px 0 0 31px;
+
+    .order-summary__button-action {
+      background-color: #fcb852;
+      border-radius: 63px;
+      width: 410.38px;
+      height: 65.86px;
+      font-family: "montserrat", serif;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #c79b6d;
+      }
+    }
+  }
+}

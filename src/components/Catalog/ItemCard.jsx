@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import doneIcon from "../../assets/icons/done-icon.svg";
 import styles from "./ItemCard.module.scss";
 
@@ -12,7 +13,10 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
   const finalPrice = totalPriceForItem * (1 - discount);
 
   return (
-    <div className={`${styles.item} ${styles[`item-${item.id}`]}`}>
+    <Link
+      to={`/product/${item.id}`}
+      className={`${styles.item} ${styles[`item-${item.id}`]}`}
+    >
       <img
         src={process.env.PUBLIC_URL + "/img/" + item.img}
         alt={item.title}
@@ -28,7 +32,13 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
 
       <div className={styles.priceContainer}>
         {isInCart ? (
-          <div className={styles.inCart} onClick={onOpenCart}>
+          <div
+            className={styles.inCart}
+            onClick={(e) => {
+              e.preventDefault(); // щоб не переходило на сторінку
+              onOpenCart();
+            }}
+          >
             <img src={doneIcon} alt="Done" className={styles.doneIcon} />В
             кошику <span>{itemInCart.quantity}</span> шт за{" "}
             <span>{finalPrice.toFixed(0)}</span> грн
@@ -36,13 +46,19 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
         ) : (
           <>
             <h2 className={styles.itemPrice}>{item.price} грн</h2>
-            <h2 className={styles.addToCart} onClick={() => onAdd(item)}>
+            <h2
+              className={styles.addToCart}
+              onClick={(e) => {
+                e.preventDefault(); // щоб картка не відкривалась
+                onAdd(item);
+              }}
+            >
               Додати в кошик
             </h2>
           </>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
 

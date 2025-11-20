@@ -1,4 +1,3 @@
-import React from "react";
 import deleteIcon from "../../../assets/icons/basket.png";
 import arrowUp from "../../../assets/icons/plus.svg";
 import arrowDown from "../../../assets/icons/minus.svg";
@@ -32,9 +31,17 @@ const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
         </h2>
 
         <div className="quantity-control">
-          <img src={arrowDown} onClick={() => onUpdateQuantity(item.id, -1)} />
+          <img
+            src={arrowDown}
+            alt=""
+            onClick={() => onUpdateQuantity(item.id, -1)}
+          />
           <span>{item.quantity}</span>
-          <img src={arrowUp} onClick={() => onUpdateQuantity(item.id, 1)} />
+          <img
+            src={arrowUp}
+            alt=""
+            onClick={() => onUpdateQuantity(item.id, 1)}
+          />
         </div>
       </div>
     </div>

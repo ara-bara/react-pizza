@@ -81,14 +81,22 @@ const Header = ({
               <div
                 className={`${styles.social} d-flex align-items-center mb-2`}
               >
-                <a href="https://linkedin.com" target="_blank">
-                  <img src={linkedinIcon} />
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                  <img src={linkedinIcon} alt="LinkedIn" />
                 </a>
-                <a href="https://instagram.com/yumbox.lutsk" target="_blank">
-                  <img src={instagramIcon} />
+                <a
+                  href="https://instagram.com/yumbox.lutsk"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={instagramIcon} alt="Instagram" />
                 </a>
-                <a href="https://facebook.com/yumbox.lutsk" target="_blank">
-                  <img src={facebookIcon} />
+                <a
+                  href="https://facebook.com/yumbox.lutsk"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={facebookIcon} alt="Facebook" />
                 </a>
               </div>
             </div>
@@ -102,8 +110,11 @@ const Header = ({
             className={`${styles.basket} ${cartOpen ? styles.active : ""}`}
             style={basketStyle}
           >
-            <div className={styles.quantity}>{totalItems}</div>
-            <div className={styles.sum}>{totalPrice.toFixed(0)} грн</div>
+            <div className={styles.basketQuantity}>
+              <span className={styles.basketQuantityValue}>{totalItems}</span>
+            </div>
+
+            <div className={styles.basketSum}>{totalPrice.toFixed(2)} грн</div>
           </div>
 
           {cartOpen && (

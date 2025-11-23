@@ -2,7 +2,7 @@ export const ingredientsData = [
   {
     id: 1,
     name: "Сир Дор-Блю",
-    img: "cheese.png",
+    img: "syr-dor-blyu.webp",
     weight: 50,
     price: 64,
     category: "cheese",
@@ -10,7 +10,7 @@ export const ingredientsData = [
   {
     id: 2,
     name: "Сир Королівський",
-    img: "ham.png",
+    img: "krolivskyj-syr.webp",
     weight: 50,
     price: 44,
     category: "cheese",
@@ -18,7 +18,7 @@ export const ingredientsData = [
   {
     id: 3,
     name: "Сир Моцарелла",
-    img: "tomato.png",
+    img: "moczarella.webp",
     weight: 50,
     price: 39,
     category: "cheese",
@@ -26,7 +26,7 @@ export const ingredientsData = [
   {
     id: 4,
     name: "Сир Пармезан",
-    img: "corn.png",
+    img: "syr-parmyzan.webp",
     weight: 48,
     price: 84,
     category: "cheese",
@@ -34,7 +34,7 @@ export const ingredientsData = [
   {
     id: 5,
     name: "Сир Фета",
-    img: "mushroom.png",
+    img: "feta.webp",
     weight: 50,
     price: 28,
     category: "cheese",

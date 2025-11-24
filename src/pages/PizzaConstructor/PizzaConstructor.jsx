@@ -32,15 +32,17 @@ const PizzaConstructor = () => {
   return (
     <div className={styles.wrapper} style={{ padding: "50px", color: "#fff" }}>
       <div>
-        <div>
+        <div className={styles.konstructorImage}>
           <img src={picture} alt="Інтерактивний конструктор піци" />
         </div>
 
-        <div>
-          <h2>Вибрані інгредієнти</h2>
-          <div>Базова ціна включає лише тісто діаметром 30 см</div>
+        <div className={styles.containerSelectedIngredients}>
+          <h2 style={{ textAlign: "center" }}>Вибрані інгредієнти</h2>
+          <div style={{ textAlign: "center" }}>
+            Базова ціна включає лише тісто діаметром 30 см
+          </div>
 
-          <div>
+          <div className={styles.selectedIngredients}>
             {selectedIngredients.map((selectedItem) => (
               <div className={styles.selectedItem} key={selectedItem.id}>
                 <div className={styles.selectedName}>{selectedItem.name}</div>

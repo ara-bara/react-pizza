@@ -1,7 +1,6 @@
 import MySelect from "../../UI/select/MySelect";
 import { useFilterSort } from "../../hooks/useFilterSort";
 import ItemCard from "./ItemCard.jsx";
-
 import styles from "./Items.module.scss";
 
 const Items = ({ items, onAdd, orders, onOpenCart, discount }) => {

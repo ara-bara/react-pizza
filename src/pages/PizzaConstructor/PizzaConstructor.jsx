@@ -2,6 +2,7 @@ import { useState } from "react";
 import quantityMinus from "../../assets/icons/minus.svg";
 import quantityPlus from "../../assets/icons/plus.svg";
 import picture from "../../assets/img/konstruktor.webp";
+import SizePicker from "../../components/UI/SizePicker/SizePicker";
 import styles from "./PizzaConstructor.module.scss";
 import { ingredientsData } from "./ingredients";
 
@@ -27,6 +28,14 @@ const PizzaConstructor = () => {
         })
         .filter(Boolean)
     );
+  };
+
+  const [pizzaSize, setPizzaSize] = useState("30");
+
+  const sizeMultiplier = {
+    30: 1,
+    40: 1.2,
+    50: 1.4,
   };
 
   return (
@@ -80,7 +89,7 @@ const PizzaConstructor = () => {
       <div>
         <div>
           <h2>Інгредієнти</h2>
-
+          <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
           <div>
             {categories.map((cat) => (
               <div key={cat} className={styles.category}>
@@ -143,10 +152,11 @@ const PizzaConstructor = () => {
 
         <div>
           Ціна:{" "}
-          {selectedIngredients.reduce(
-            (sum, ingredient) => sum + ingredient.price * ingredient.quantity,
-            150
-          )}{" "}
+          {150 * sizeMultiplier[pizzaSize] +
+            selectedIngredients.reduce(
+              (sum, ingredient) => sum + ingredient.price * ingredient.quantity,
+              0
+            )}{" "}
           грн
         </div>
       </div>

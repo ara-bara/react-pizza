@@ -1,0 +1,58 @@
+export const souceData = [
+  {
+    id: 1,
+    title: "Соус Брусничний",
+    price: 24,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 2,
+    title: "Соус Тартар",
+    price: 24,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 3,
+    title: "Соус Часниковий",
+    price: 19,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 4,
+    title: "Соус Сирний",
+    price: 25,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 5,
+    title: "Соус Кетчуп",
+    price: 19,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 6,
+    title: "Соус Солодкий Чилі",
+    price: 25,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 7,
+    title: "Соус Барбекю",
+    price: 24,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+  {
+    id: 8,
+    title: "Соус Цезар",
+    price: 25,
+    weight: "40 грам",
+    picture: "picture.svg",
+  },
+];

@@ -1,0 +1,72 @@
+.footer {
+  color: white;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.1);
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 20px;
+  height: 275px;
+  padding-top: 30px;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.04);
+  border-right: 1px solid hsla(0, 0%, 100%, 0.04);
+  cursor: pointer;
+  img {
+    width: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .brandSection {
+    img {
+      width: 250px;
+    }
+    p {
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    .copyright {
+      color: #6c757d;
+    }
+  }
+  .contactsSection {
+    img {
+      height: 24px;
+      margin: 0 10px;
+    }
+    .location {
+      display: flex;
+    }
+    .phone {
+      display: flex;
+      margin: 15px 0;
+    }
+    .worktime {
+      display: flex;
+    }
+  }
+  .mediaSection {
+    text-align: center;
+    .downloadApp {
+      .storeButtons {
+        margin: 25px 35px 15px 35px;
+        display: flex;
+        justify-content: space-around;
+        img {
+          width: 120px;
+        }
+      }
+    }
+    .socialMedia {
+      h2 {
+        margin-bottom: 25px;
+      }
+      .socialIcons {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+}

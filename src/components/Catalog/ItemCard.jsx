@@ -35,7 +35,7 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
           <div
             className={styles.inCart}
             onClick={(e) => {
-              e.preventDefault(); // щоб не переходило на сторінку
+              e.preventDefault(); 
               onOpenCart();
             }}
           >
@@ -49,7 +49,7 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
             <h2
               className={styles.addToCart}
               onClick={(e) => {
-                e.preventDefault(); // щоб картка не відкривалась
+                e.preventDefault(); 
                 onAdd(item);
               }}
             >

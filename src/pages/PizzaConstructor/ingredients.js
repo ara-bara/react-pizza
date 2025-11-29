@@ -224,7 +224,7 @@ export const ingredientsData = [
     category: "base",
   },
   {
-    id: 28,
+    id: 29,
     name: "Цезар соус",
     img: "cesar.png",
     weight: 50,

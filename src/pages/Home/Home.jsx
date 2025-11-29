@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Items from "../../components/Catalog/Items";
 import Header from "../../components/Header/Header";
@@ -20,6 +21,17 @@ const Home = () => {
     closeCart,
   } = useCart();
 
+  // 1. Створення ref для секції каталогу
+  const itemsRef = useRef(null);
+
+  // 2. Функція для прокрутки до каталогу
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      // Плавна прокрутка до початку секції з каталогом
+      itemsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="wrapper">
       <Header
@@ -32,17 +44,21 @@ const Home = () => {
         onOpenCart={openCart}
         onCloseCart={closeCart}
         cartOpen={cartOpen}
+        onScrollToItems={scrollToItems} // 3. Передаємо функцію прокрутки в Header
       />
 
       <div className={cartOpen ? "blur" : ""}>
         <Slider />
-        <Items
-          items={itemsData}
-          onAdd={addToOrder}
-          orders={orders}
-          onOpenCart={openCart}
-          discount={discount}
-        />
+        {/* 4. Обгортаємо Items у div з ref для прокрутки */}
+        <div ref={itemsRef}>
+          <Items
+            items={itemsData}
+            onAdd={addToOrder}
+            orders={orders}
+            onOpenCart={openCart}
+            discount={discount}
+          />
+        </div>
       </div>
     </div>
   );

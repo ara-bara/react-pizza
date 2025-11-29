@@ -203,3 +203,88 @@
     }
   }
 }
+
+/* ===============================
+   FIXED BOTTOM ADD-TO-CART PANEL
+   =============================== */
+
+.bottomBar {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  background: #1b1b1b;
+  padding: 18px 28px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  z-index: 2000;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+  border: 1px solid #2a2a2a;
+}
+
+.priceBlock {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  min-width: 120px;
+}
+
+/* Кількість */
+.quantityBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: #3a3a3a;
+      border-color: #505050;
+    }
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    width: 30px;
+    text-align: center;
+  }
+}
+
+/* Кнопка "Додати в кошик" */
+.addButton {
+  background: #1a1a1a; /* стильна червона кнопка як на твоїх сайтах */
+  padding: 12px 28px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: background 0.2s ease;
+
+  &:hover {
+    border-color: #ff5a1f !important;
+    border: 1px solid #ff5a1f;
+    box-shadow: 0 0 10px rgba(255, 90, 31, 0.4);
+  }
+
+  &:active {
+    background: #2e2e2e;
+  }
+}

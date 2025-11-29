@@ -8,7 +8,8 @@ export function useCart() {
   const addToOrder = (item) => {
     const exists = orders.some((el) => el.id === item.id);
     if (!exists) {
-      setOrders([...orders, { ...item, quantity: 1 }]);
+      // ВИПРАВЛЕННЯ: Використовуємо quantity з об'єкта item (якщо є)
+      setOrders([...orders, { ...item, quantity: item.quantity || 1 }]);
     }
   };
 

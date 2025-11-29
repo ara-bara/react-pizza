@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Додано імпорти для роутингу
 
-import facebookIcon from "../../assets/icons/facebook.svg";
-import instagramIcon from "../../assets/icons/instagram.svg";
-import linkedinIcon from "../../assets/icons/linkedin.svg";
 import logo from "../../assets/icons/logo.webp";
 
 import Cart from "./components/Cart";
@@ -20,12 +18,33 @@ const Header = ({
   onOpenCart,
   onCloseCart,
   cartOpen,
+  onScrollToItems, // 1. Приймаємо функцію прокрутки
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigate = useNavigate(); // Хук для навігації
+  const location = useLocation(); // Хук для отримання поточного шляху
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     if (cartOpen) onCloseCart();
+  };
+
+  const closeMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    closeMenu(); // Закриваємо мобільне меню
+
+    if (location.pathname === "/") {
+      onScrollToItems();
+    } else {
+      navigate("/");
+    }
   };
 
   const handleCartClick = () => {
@@ -43,63 +62,55 @@ const Header = ({
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" fixed="top" className={styles.navbar}>
-      <Container className="container-custom">
-        <Navbar.Brand href="/">
-          <img
-            src={logo}
-            width="250"
-            height="57"
-            style={{ marginLeft: "32px" }}
-            alt="Logo"
-          />
-        </Navbar.Brand>
-
-        <div className="d-flex align-items-center">
-          <span className="d-lg-none me-2 fw-bold" style={{ color: "#FFFFFF" }}>
-            Меню
-          </span>
-          <Navbar.Toggle aria-controls="navbar" onClick={toggleMenu} />
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      variant="dark"
+      className={styles.header}
+    >
+      <Container fluid className={styles.headerContainer}>
+        {/* 3. Логотип / Обробник кліку */}
+        {/* Використовуємо div з onClick для контролю прокрутки */}
+        <div
+          className={styles.logoContainer}
+          onClick={handleLogoClick}
+          role="link" // Для доступності
+        >
+          <img src={logo} alt="Black Pizza Logo" className={styles.logo} />
         </div>
 
-        {/* Мобільне меню */}
-        <Navbar.Collapse in={isMenuOpen}>
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Каталог</Nav.Link>
-            <Nav.Link href="/catering">Кейтеринг</Nav.Link>
-            <Nav.Link href="/about">Про нас</Nav.Link>
-            <Nav.Link href="/contacts">Контакти</Nav.Link>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          onClick={toggleMenu}
+          className={styles.burger}
+        />
 
-            <div className="d-md-none mt-3">
-              <div className={styles.contacts}>
-                <a href="mailto:yumbox.lutsk@gmail.com">
-                  yumbox.lutsk@gmail.com
-                </a>
-                <a href="tel: +380938239293">+380 93 823 92 93</a>
-              </div>
-
-              <div
-                className={`${styles.social} d-flex align-items-center mb-2`}
-              >
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                  <img src={linkedinIcon} alt="LinkedIn" />
-                </a>
-                <a
-                  href="https://instagram.com/yumbox.lutsk"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={instagramIcon} alt="Instagram" />
-                </a>
-                <a
-                  href="https://facebook.com/yumbox.lutsk"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={facebookIcon} alt="Facebook" />
-                </a>
-              </div>
-            </div>
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          className={isMenuOpen ? styles.open : ""}
+        >
+          <Nav className="me-auto">
+            {/* Посилання "Головна" тепер викликає ту ж функцію прокрутки */}
+            <Nav.Link
+              as={Link}
+              to="/"
+              className={styles.navLink}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLogoClick(e); // Викликаємо ту ж логіку для прокрутки/навігації
+                closeMenu();
+              }}
+            >
+              Головна
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              className={styles.navLink}
+              onClick={closeMenu}
+            >
+              Контакти
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
 
@@ -114,7 +125,9 @@ const Header = ({
               <span className={styles.basketQuantityValue}>{totalItems}</span>
             </div>
 
-            <div className={styles.basketSum}>{totalPrice.toFixed(2)} грн</div>
+            <div className={styles.basketSum}>
+              {(totalPrice || 0).toFixed(2)} грн
+            </div>
           </div>
 
           {cartOpen && (

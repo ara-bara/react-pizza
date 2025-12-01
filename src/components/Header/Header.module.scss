@@ -10,9 +10,16 @@
   .navbar {
     background-color: #1c1a1a;
     padding-top: 31px;
+    position: fixed;
+    top: 0;
+    left: 50%; /* прив’язуємо до середини екрана */
+    transform: translateX(-50%);
+    width: 1280px;
+    height: 100px;
+    z-index: 999;
 
-    .navbar-brand {
-      flex-grow: 1;
+    img {
+      width: 300px;
     }
 
     .navbar-collapse {
@@ -47,21 +54,19 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   }
-  
 }
 .basket {
   color: #fff;
-      display: flex;
-      cursor: pointer;
-      flex-wrap: nowrap;
-      align-items: center;
-      width: 117px;
-      height: 27px;
-      border: 1px solid #FFFFFF;
-      border-radius: 21px;
-      box-sizing: border-box;
-      margin-right: 13px;
-
+  display: flex;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 117px;
+  height: 27px;
+  border: 1px solid #ffffff;
+  border-radius: 21px;
+  box-sizing: border-box;
+  margin-right: 13px;
 }
 
 .basket:hover {
@@ -69,17 +74,17 @@
 }
 
 .basketQuantity {
-  background-color: #D71515;
-         height: 19px;
-         width: 19px;
-         border-radius: 50%;
-         margin-left: 4px;
+  background-color: #d71515;
+  height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  margin-left: 4px;
 }
 
-.basketQuantity{
-   font-size: 12px;
-   font-weight: bold;
-   text-align: center
+.basketQuantity {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .basketSum {

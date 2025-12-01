@@ -26,16 +26,13 @@ const ProductPage = ({
   const { id } = useParams();
   const numericId = Number(id);
 
-  // ❗ ХУКИ ТУТ — ЗАВЖДИ, БЕЗ IF !!!
   const [pizzaSize, setPizzaSize] = useState("30");
 
-  // якщо сторінка — конструктор
-  if (Number(id) === 12) {
+  if (numericId === 12) {
     return (
       <PizzaConstructor
         addToOrder={addToOrder}
         orders={orders}
-        // ПЕРЕДАЧА ВСІХ ПРОПСІВ У КОНСТРУКТОР
         onDelete={onDelete}
         onUpdateQuantity={onUpdateQuantity}
         totalItems={totalItems}
@@ -49,7 +46,6 @@ const ProductPage = ({
   }
 
   const item = itemsData.find((el) => el.id === numericId);
-
   if (!item) return <h2>Товар не знайдено</h2>;
 
   const finalPrice = Math.round(item.price * sizeMultiplier[pizzaSize]);

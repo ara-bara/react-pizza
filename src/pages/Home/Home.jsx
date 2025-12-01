@@ -1,36 +1,50 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Items from "../../components/Catalog/Items";
 import Header from "../../components/Header/Header";
 import Slider from "../../components/Slider/Slider";
-import { useCart } from "../../hooks/useCart";
+import Footer from "../../components/Footer/Footer";
 import { itemsData } from "./Home.data";
 
-const Home = () => {
-  const {
-    orders,
-    addToOrder,
-    deleteOrder,
-    updateQuantity,
-    checkout,
-    totalItems,
-    totalPrice,
-    discount,
-    cartOpen,
-    openCart,
-    closeCart,
-  } = useCart();
+const Home = ({
+  orders,
+  addToOrder,
+  deleteOrder,
+  updateQuantity,
+  checkout,
+  totalItems,
+  totalPrice,
+  onOpenCart,
+  onCloseCart,
+  cartOpen,
+  discount,
+}) => {
+  const location = useLocation();
 
-  // 1. Створення ref для секції каталогу
   const itemsRef = useRef(null);
+  const footerRef = useRef(null);
 
-  // 2. Функція для прокрутки до каталогу
   const scrollToItems = () => {
     if (itemsRef.current) {
-      // Плавна прокрутка до початку секції з каталогом
       itemsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  const scrollToFooter = () => {
+    if (footerRef.current) {
+      footerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "footer") {
+      scrollToFooter();
+    }
+  }, [location.state]);
 
   return (
     <div className="wrapper">
@@ -41,24 +55,29 @@ const Home = () => {
         totalItems={totalItems}
         totalPrice={totalPrice}
         onCheckout={checkout}
-        onOpenCart={openCart}
-        onCloseCart={closeCart}
+        onOpenCart={onOpenCart}
+        onCloseCart={onCloseCart}
         cartOpen={cartOpen}
-        onScrollToItems={scrollToItems} // 3. Передаємо функцію прокрутки в Header
+        onScrollToItems={scrollToItems}
+        onScrollToFooter={scrollToFooter}
       />
 
       <div className={cartOpen ? "blur" : ""}>
         <Slider />
-        {/* 4. Обгортаємо Items у div з ref для прокрутки */}
+
         <div ref={itemsRef}>
           <Items
             items={itemsData}
             onAdd={addToOrder}
             orders={orders}
-            onOpenCart={openCart}
+            onOpenCart={onOpenCart}
             discount={discount}
           />
         </div>
+      </div>
+
+      <div ref={footerRef}>
+        <Footer />
       </div>
     </div>
   );

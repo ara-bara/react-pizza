@@ -3,6 +3,8 @@
 .main {
   text-align: center;
   font-family: "Montserrat", serif;
+  border: 1px solid hsla(0, 0%, 100%, 0.04);
+  padding-top: 30px;
 
   .filterForm {
     display: flex;

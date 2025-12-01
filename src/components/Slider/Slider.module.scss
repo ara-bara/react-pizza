@@ -2,91 +2,88 @@
 
 html,
 body {
-   height: 100%;
-   background-color: #1c1a1a;
+  height: 100%;
+  background-color: #1c1a1a;
 }
 
-
 .sliderWrapper {
-   position: relative;
-   overflow: hidden;
-   z-index: 2;
-   @include wh(1276px, 503px);
-   margin-bottom: 30px;
-   img{ 
-      max-width: 100%;
-      height: auto;
-   }
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  @include wh(1276px, 503px);
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .bullet {
-   background-color: gray;
-   cursor: pointer;
-   @include wh(9px, 9px);
+  background-color: gray;
+  cursor: pointer;
+  @include wh(9px, 9px);
 }
 
 .customPagination {
-   margin: 10px 0 0 46.48%;
+  margin: 10px 0 0 46.48%;
 }
 
 @media (max-width: 1300px) {
+  .sliderWrapper {
+    width: 1000px;
+    height: 300px;
+    margin: 126px auto 0 auto;
+    padding-left: 0;
+    transform: translateX(-6px);
+  }
 
-   .sliderWrapper {
-      width: 1000px;
-      height: 300px;
-      margin: 126px auto 0 auto;
-      padding-left: 0;
-      transform: translateX(-6px);
-   }
+  .customPagination {
+    margin: 25px auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 
-   .customPagination {
-      margin: 25px auto 0 auto;
-      display: flex;
-      justify-content: center;
-   }
+  .banner {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
 
-   .banner {
-      width: 70%;
-      display: block;
-      margin: 0 auto;
-   }
-
-   .smile {
-      display: none;
-   }
+  .smile {
+    display: none;
+  }
 }
 
 @media (max-width: 1200px) {
-   .sliderWrapper {
-      width: 800px;
-      height: 250px;
-   }
+  .sliderWrapper {
+    width: 800px;
+    height: 250px;
+  }
 }
 
 @media (max-width: 991px) {
-   .sliderWrapper {
-      width: 600px;
-      height: 190px;
-   }
+  .sliderWrapper {
+    width: 600px;
+    height: 190px;
+  }
 }
 
 @media (max-width: 768px) {
-   .sliderWrapper {
-      width: 500px;
-      height: 335px;
-   }
+  .sliderWrapper {
+    width: 500px;
+    height: 335px;
+  }
 }
 
 @media (max-width: 600px) {
-   .sliderWrapper {
-      width: 400px;
-      height: 270px;
-   }
+  .sliderWrapper {
+    width: 400px;
+    height: 270px;
+  }
 }
 
 @media (max-width: 470px) {
-   .sliderWrapper {
-      width: 300px;
-      height: 205px;
-   }
+  .sliderWrapper {
+    width: 300px;
+    height: 205px;
+  }
 }

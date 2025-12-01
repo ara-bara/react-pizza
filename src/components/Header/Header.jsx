@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Додано імпорти для роутингу
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/icons/logo.webp";
 
@@ -18,12 +18,13 @@ const Header = ({
   onOpenCart,
   onCloseCart,
   cartOpen,
-  onScrollToItems, // 1. Приймаємо функцію прокрутки
+  onScrollToItems,
+  onScrollToFooter,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigate = useNavigate(); // Хук для навігації
-  const location = useLocation(); // Хук для отримання поточного шляху
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,7 +39,7 @@ const Header = ({
 
   const handleLogoClick = (e) => {
     e.preventDefault();
-    closeMenu(); // Закриваємо мобільне меню
+    closeMenu();
 
     if (location.pathname === "/") {
       onScrollToItems();
@@ -62,19 +63,20 @@ const Header = ({
   };
 
   return (
+    // 💡 ВИПРАВЛЕНО: Змінено styles.header на styles.navbar, щоб застосувати стилі з SCSS
     <Navbar
       collapseOnSelect
       expand="lg"
       variant="dark"
-      className={styles.header}
+      className={styles.navbar}
     >
+      {/* ❗ У Header.module.scss ви не визначили .headerContainer, 
+          але я залишаю його як є, оскільки він, ймовірно, знаходиться у Mixin.scss */}
       <Container fluid className={styles.headerContainer}>
-        {/* 3. Логотип / Обробник кліку */}
-        {/* Використовуємо div з onClick для контролю прокрутки */}
         <div
           className={styles.logoContainer}
           onClick={handleLogoClick}
-          role="link" // Для доступності
+          role="link"
         >
           <img src={logo} alt="Black Pizza Logo" className={styles.logo} />
         </div>
@@ -90,24 +92,36 @@ const Header = ({
           className={isMenuOpen ? styles.open : ""}
         >
           <Nav className="me-auto">
-            {/* Посилання "Головна" тепер викликає ту ж функцію прокрутки */}
+            {/* Посилання "Головна" */}
             <Nav.Link
               as={Link}
               to="/"
               className={styles.navLink}
               onClick={(e) => {
                 e.preventDefault();
-                handleLogoClick(e); // Викликаємо ту ж логіку для прокрутки/навігації
+                handleLogoClick(e);
                 closeMenu();
               }}
             >
               Головна
             </Nav.Link>
+
+            {/* Посилання "Контакти" - ВИПРАВЛЕНО: Використовуємо state для надійності */}
             <Nav.Link
               as={Link}
-              to="/contact"
+              to="/"
               className={styles.navLink}
-              onClick={closeMenu}
+              onClick={(e) => {
+                e.preventDefault();
+                closeMenu();
+
+                if (location.pathname === "/") {
+                  onScrollToFooter();
+                } else {
+                  // Перехід на головну з передачею стану для прокрутки
+                  navigate("/", { state: { scrollTo: "footer" } });
+                }
+              }}
             >
               Контакти
             </Nav.Link>

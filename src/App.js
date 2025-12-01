@@ -21,14 +21,31 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              orders={orders}
+              addToOrder={addToOrder}
+              deleteOrder={deleteOrder}
+              updateQuantity={updateQuantity}
+              checkout={checkout}
+              totalItems={totalItems}
+              totalPrice={totalPrice}
+              onOpenCart={openCart}
+              onCloseCart={closeCart}
+              cartOpen={cartOpen}
+              discount={discount}
+            />
+          }
+        />
+
         <Route
           path="/product/:id"
           element={
             <ProductPage
               addToOrder={addToOrder}
               orders={orders}
-              // ПЕРЕДАЧА ВСІХ ПРОПСІВ КОШИКА ДЛЯ HEADER
               onDelete={deleteOrder}
               onUpdateQuantity={updateQuantity}
               totalItems={totalItems}

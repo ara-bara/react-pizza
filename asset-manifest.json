@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-pizza/static/css/main.e06ef4c2.css",
-    "main.js": "/react-pizza/static/js/main.03832eee.js",
+    "main.css": "/react-pizza/static/css/main.0d969026.css",
+    "main.js": "/react-pizza/static/js/main.b6358b86.js",
     "static/media/AvenirNextCyr-Demi.eot": "/react-pizza/static/media/AvenirNextCyr-Demi.4b2189c473c87dbf4d5d.eot",
     "static/media/AvenirNextCyr-Demi.ttf": "/react-pizza/static/media/AvenirNextCyr-Demi.c234f5295ae22b8b0e28.ttf",
     "static/media/konstruktor.webp": "/react-pizza/static/media/konstruktor.8dba578f8319ff914c49.webp",
@@ -11,16 +11,21 @@
     "static/media/AvenirNextCyr-Demi.woff": "/react-pizza/static/media/AvenirNextCyr-Demi.4a392b4ac7128c077b27.woff",
     "static/media/AvenirNextCyr-Demi.woff2": "/react-pizza/static/media/AvenirNextCyr-Demi.f033b66b803cabbd66b5.woff2",
     "static/media/logo.webp": "/react-pizza/static/media/logo.c009f6e59829b99e35a0.webp",
+    "static/media/appstore.webp": "/react-pizza/static/media/appstore.55966c7a5c59091e6cff.webp",
+    "static/media/googleplay.webp": "/react-pizza/static/media/googleplay.69ee3dc5df8e9e5c5814.webp",
+    "static/media/tiktok.svg": "/react-pizza/static/media/tiktok.4a031925f9950e73b1dcb347291ef3e0.svg",
     "static/media/done-icon.svg": "/react-pizza/static/media/done-icon.ec51e25664401524a6d76be464bd60da.svg",
+    "static/media/instagram.svg": "/react-pizza/static/media/instagram.378f8d86afc3f17d5baa7f74750fb717.svg",
+    "static/media/youtube.svg": "/react-pizza/static/media/youtube.06c48775c49b09c689bb9b5470044c33.svg",
     "index.html": "/react-pizza/index.html",
     "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.32e7d8c0a9addb9f7b2cf7eaa08e4c7e.svg",
     "static/media/plus.svg": "/react-pizza/static/media/plus.8e1af1c6c59b6f378abd1bba7964246e.svg",
     "static/media/minus.svg": "/react-pizza/static/media/minus.77eb0172bd1aeb531f6f83f6a755374d.svg",
-    "main.e06ef4c2.css.map": "/react-pizza/static/css/main.e06ef4c2.css.map",
-    "main.03832eee.js.map": "/react-pizza/static/js/main.03832eee.js.map"
+    "main.0d969026.css.map": "/react-pizza/static/css/main.0d969026.css.map",
+    "main.b6358b86.js.map": "/react-pizza/static/js/main.b6358b86.js.map"
   },
   "entrypoints": [
-    "static/css/main.e06ef4c2.css",
-    "static/js/main.03832eee.js"
+    "static/css/main.0d969026.css",
+    "static/js/main.b6358b86.js"
   ]
 }

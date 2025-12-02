@@ -1,92 +1,127 @@
-@import "/src/styles/Mixin.scss";
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1c1a1a;
+  z-index: 9999;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
 
-.wrapper {
+.inner {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* ЛОГО */
+.logo img {
+  width: 260px;
+  cursor: pointer;
+}
+
+/* МЕНЮ */
+.nav {
+  display: flex;
+  gap: 40px;
+
+  a {
+    color: white;
+    font-size: 15px;
+    font-family: "Montserrat", serif;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* БУРГЕР */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  
+  span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+}
+
+/* КОШИК */
+.orderContainer {
+  position: relative;
+}
+
+.basket {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 28px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+.basketQuantity {
+  background-color: #d71515;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.basketSum {
+  margin-left: auto;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background: #1c1a1a;
+    width: 200px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+  }
+
+  .nav.navOpen {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+.wrapper{
   width: 1280px;
   margin: 0 auto;
   position: relative;
   height: 100%;
   padding-bottom: 50px;
 
-  .navbar {
-    background-color: #1c1a1a;
-    padding-top: 31px;
-    position: fixed;
-    top: 0;
-    left: 50%; /* прив’язуємо до середини екрана */
-    transform: translateX(-50%);
-    width: 1280px;
-    height: 100px;
-    z-index: 999;
-
-    img {
-      width: 300px;
-    }
-
-    .navbar-collapse {
-      flex-grow: 2;
-      margin-left: 139px;
-      margin-top: 2px;
-
-      .navbar-nav {
-        a {
-          color: #fff;
-          font-weight: 400;
-          font-size: 15px;
-          font-family: "Montserrat", serif;
-
-          &:nth-child(2) {
-            transform: translateX(10px);
-            letter-spacing: -0.5px;
-          }
-
-          &:nth-child(3) {
-            transform: translateX(16px);
-          }
-
-          &:nth-child(4) {
-            transform: translateX(27px);
-          }
-        }
-      }
-    }
-
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
-  }
-}
-.basket {
-  color: #fff;
-  display: flex;
-  cursor: pointer;
-  flex-wrap: nowrap;
-  align-items: center;
-  width: 117px;
-  height: 27px;
-  border: 1px solid #ffffff;
-  border-radius: 21px;
-  box-sizing: border-box;
-  margin-right: 13px;
-}
-
-.basket:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.basketQuantity {
-  background-color: #d71515;
-  height: 19px;
-  width: 19px;
-  border-radius: 50%;
-  margin-left: 4px;
-}
-
-.basketQuantity {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.basketSum {
-  margin: 0 auto;
 }

@@ -1,10 +1,10 @@
-import { useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Items from "../../components/Catalog/Items";
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Slider from "../../components/Slider/Slider";
-import Footer from "../../components/Footer/Footer";
 import { itemsData } from "./Home.data";
 
 const Home = ({
@@ -26,23 +26,19 @@ const Home = ({
   const footerRef = useRef(null);
 
   const scrollToItems = () => {
-    if (itemsRef.current) {
-      itemsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    itemsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const scrollToFooter = () => {
-    if (footerRef.current) {
-      footerRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    footerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useEffect(() => {
     if (location.state?.scrollTo === "footer") {
       scrollToFooter();
+    }
+    if (location.state?.scrollTo === "items") {
+      scrollToItems();
     }
   }, [location.state]);
 
@@ -74,10 +70,10 @@ const Home = ({
             discount={discount}
           />
         </div>
-      </div>
 
-      <div ref={footerRef}>
-        <Footer />
+        <div ref={footerRef}>
+          <Footer />
+        </div>
       </div>
     </div>
   );

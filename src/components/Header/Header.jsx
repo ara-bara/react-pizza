@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/icons/logo.webp";
-
 import Cart from "./components/Cart";
 
 import styles from "./Header.module.scss";
@@ -21,122 +19,92 @@ const Header = ({
   onScrollToItems,
   onScrollToFooter,
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    if (cartOpen) onCloseCart();
-  };
+  /** Головна */
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    setMenuOpen(false);
 
-  const closeMenu = () => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
+    // Просто переходимо на головну
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
-  const handleLogoClick = (e) => {
+  /** Меню */
+  const handleMenuClick = (e) => {
     e.preventDefault();
-    closeMenu();
+    setMenuOpen(false);
 
     if (location.pathname === "/") {
       onScrollToItems();
     } else {
-      navigate("/");
+      navigate("/", { state: { scrollTo: "items" } });
     }
   };
 
+  /** Контакти */
+  const handleContactsClick = (e) => {
+    e.preventDefault();
+    setMenuOpen(false);
+
+    if (location.pathname === "/") {
+      onScrollToFooter();
+    } else {
+      navigate("/", { state: { scrollTo: "footer" } });
+    }
+  };
+
+  /** Кошик */
   const handleCartClick = () => {
-    if (cartOpen) onCloseCart();
-    else {
-      onOpenCart();
-      setIsMenuOpen(false);
-    }
-  };
-
-  const basketStyle = {
-    width: totalItems <= 13 ? "117px" : `${117 + (totalItems - 13) * 10}px`,
-    maxWidth: "250px",
-    transition: "width 0.3s ease-in-out",
+    cartOpen ? onCloseCart() : onOpenCart();
+    setMenuOpen(false);
   };
 
   return (
-    // 💡 ВИПРАВЛЕНО: Змінено styles.header на styles.navbar, щоб застосувати стилі з SCSS
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      variant="dark"
-      className={styles.navbar}
-    >
-      {/* ❗ У Header.module.scss ви не визначили .headerContainer, 
-          але я залишаю його як є, оскільки він, ймовірно, знаходиться у Mixin.scss */}
-      <Container fluid className={styles.headerContainer}>
-        <div
-          className={styles.logoContainer}
-          onClick={handleLogoClick}
-          role="link"
-        >
-          <img src={logo} alt="Black Pizza Logo" className={styles.logo} />
+    <header className={styles.header}>
+      <div className={styles.inner}>
+        {/* ЛОГО */}
+        <div className={styles.logo} onClick={handleHomeClick}>
+          <img src={logo} alt="Black Pizza Logo" />
         </div>
 
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={toggleMenu}
-          className={styles.burger}
-        />
+        {/* Меню */}
+        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+          <Link to="/" onClick={handleHomeClick}>
+            Головна
+          </Link>
 
-        <Navbar.Collapse
-          id="responsive-navbar-nav"
-          className={isMenuOpen ? styles.open : ""}
+          <Link to="/" onClick={handleMenuClick}>
+            Меню
+          </Link>
+
+          <Link to="/" onClick={handleContactsClick}>
+            Контакти
+          </Link>
+        </nav>
+
+        {/* Бургер */}
+        <div
+          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
         >
-          <Nav className="me-auto">
-            {/* Посилання "Головна" */}
-            <Nav.Link
-              as={Link}
-              to="/"
-              className={styles.navLink}
-              onClick={(e) => {
-                e.preventDefault();
-                handleLogoClick(e);
-                closeMenu();
-              }}
-            >
-              Головна
-            </Nav.Link>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-            {/* Посилання "Контакти" - ВИПРАВЛЕНО: Використовуємо state для надійності */}
-            <Nav.Link
-              as={Link}
-              to="/"
-              className={styles.navLink}
-              onClick={(e) => {
-                e.preventDefault();
-                closeMenu();
-
-                if (location.pathname === "/") {
-                  onScrollToFooter();
-                } else {
-                  // Перехід на головну з передачею стану для прокрутки
-                  navigate("/", { state: { scrollTo: "footer" } });
-                }
-              }}
-            >
-              Контакти
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
-        {/* 🛒 Кошик */}
+        {/* Кошик */}
         <div className={styles.orderContainer}>
-          <div
-            onClick={handleCartClick}
-            className={`${styles.basket} ${cartOpen ? styles.active : ""}`}
-            style={basketStyle}
-          >
+          <div className={styles.basket} onClick={handleCartClick}>
             <div className={styles.basketQuantity}>
-              <span className={styles.basketQuantityValue}>{totalItems}</span>
+              <span>{totalItems}</span>
             </div>
 
             <div className={styles.basketSum}>
@@ -155,8 +123,8 @@ const Header = ({
             />
           )}
         </div>
-      </Container>
-    </Navbar>
+      </div>
+    </header>
   );
 };
 

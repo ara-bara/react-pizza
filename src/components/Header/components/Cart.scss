@@ -1,17 +1,25 @@
 .shop-cart {
-  width: 469px;
-  background-color: #1c1a1a;
   position: fixed;
-  overflow-y: auto;
-  z-index: 20;
+  top: 0;
   right: 0;
-  top: 106px;
-  height: calc(100% - 121px);
+
+  width: 469px;
+  height: 100vh; /* 100% висота */
+
+  background-color: #1c1a1a;
+  z-index: 10000;
+
+  display: flex;
+  flex-direction: column;
+
+  /* внутрішній скролл */
   overflow-y: auto;
+
+  padding: 0 28px 50px 29px;
   color: #ffffff;
-  padding: 0 28px 0 29px;
   font-family: "Avenir Next Cyr";
-  padding-bottom: 167px;
+
+  border-left: 1px solid #333; /* опціонально */
 }
 
 .cart-header {
@@ -51,16 +59,16 @@
   background-color: #222222;
   padding-top: 19px;
   .delete-icon {
-            img {
-               transition: transform 0.3s ease-in-out;
-               cursor: pointer;
-               margin: 0 6px 7px 0;
-            }
+    img {
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      margin: 0 6px 7px 0;
+    }
 
-            &:hover img {
-               transform: scale(1.3);
-            }
-         }
+    &:hover img {
+      transform: scale(1.3);
+    }
+  }
 }
 
 .order-info {
@@ -152,35 +160,26 @@
 }
 
 .order-summary {
-  background-color: #222222;
-  width: 469px;
+  margin-top: 30px;
+  width: 100%;
   height: 167px;
   border-radius: 31px 31px 0 0;
-  position: fixed;
-  bottom: 0;
-  right: 0;
   font-family: "Avenir Next Cyr";
   font-size: 18px;
   font-weight: 600;
 
-  .order-summary__delivery {
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
+  
 
   .order-summary__button {
-    margin: 20px 0 0 31px;
-
     .order-summary__button-action {
-      background-color: #fcb852;
-      border-radius: 63px;
-      width: 410.38px;
-      height: 65.86px;
-      font-family: "montserrat", serif;
-      cursor: pointer;
-      transition: background 0.2s ease;
+      background-color: #ab2321;
+      border: unset;
+      width: 100%;
+      border-radius: 8px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      color: #fff;
+      font-weight: 700;
 
       &:hover {
         background: #c79b6d;

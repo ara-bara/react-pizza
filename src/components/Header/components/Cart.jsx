@@ -43,6 +43,7 @@ const Cart = ({
       {orders.length > 0 && (
         <div className="order-summary">
           <div className="order-summary__button">
+            <div>{ }</div>
             <button
               className="order-summary__button-action"
               onClick={onCheckout}

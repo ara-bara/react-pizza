@@ -11,8 +11,10 @@ function App() {
     updateQuantity,
     checkout,
     totalItems,
+    subtotal,
+    discountPercent,
+    discountAmount,
     totalPrice,
-    discount,
     cartOpen,
     openCart,
     closeCart,
@@ -32,10 +34,12 @@ function App() {
               checkout={checkout}
               totalItems={totalItems}
               totalPrice={totalPrice}
+              subtotal={subtotal}
+              discountAmount={discountAmount}
+              discount={discountPercent}
               onOpenCart={openCart}
               onCloseCart={closeCart}
               cartOpen={cartOpen}
-              discount={discount}
             />
           }
         />
@@ -50,11 +54,13 @@ function App() {
               onUpdateQuantity={updateQuantity}
               totalItems={totalItems}
               totalPrice={totalPrice}
+              subtotal={subtotal}
+              discountAmount={discountAmount}
+              discount={discountPercent}
               onCheckout={checkout}
               onOpenCart={openCart}
               onCloseCart={closeCart}
               cartOpen={cartOpen}
-              discount={discount}
             />
           }
         />

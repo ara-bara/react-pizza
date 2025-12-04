@@ -1,3 +1,5 @@
+// Cart.jsx
+
 import closeIcon from "../../../assets/icons/close-icon.svg";
 import "./Cart.scss";
 import CartItem from "./CartItem";
@@ -6,11 +8,16 @@ const Cart = ({
   orders,
   onDelete,
   onUpdateQuantity,
+  // Приймаємо нові пропси для підсумку
+  subtotal,
+  discountAmount,
   totalPrice,
   onCheckout,
   closeCart,
 }) => {
-  const discount = totalPrice >= 1000 ? 0.1 : 0;
+  // Розрахунок відсотка знижки для передачі в CartItem
+  // Це необхідно, щоб CartItem знав, яку знижку застосувати до ціни кожного товару.
+  const discountPercent = subtotal > 0 ? discountAmount / subtotal : 0;
 
   return (
     <div className="shop-cart">
@@ -29,7 +36,8 @@ const Cart = ({
           <CartItem
             key={item.id}
             item={item}
-            discount={discount}
+            // Передаємо відсоток знижки в CartItem
+            discount={discountPercent}
             onDelete={onDelete}
             onUpdateQuantity={onUpdateQuantity}
           />
@@ -42,13 +50,24 @@ const Cart = ({
 
       {orders.length > 0 && (
         <div className="order-summary">
+          <div>
+            {/* 1. Сума (Subtotal) */}
+            <div>Сума: {subtotal.toFixed(0)} ₴</div>
+            {/* 2. Знижка (Discount Amount) */}
+            <div>
+              Знижка:{" "}
+              <span className="discount-amount">
+                {discountAmount.toFixed(0)} ₴
+              </span>
+            </div>
+          </div>
           <div className="order-summary__button">
-            <div>{ }</div>
+            <div>До сплати: {totalPrice.toFixed(0)} ₴</div>
             <button
               className="order-summary__button-action"
               onClick={onCheckout}
             >
-              оформити за {totalPrice.toFixed(0)} ₴
+              Оформити
             </button>
           </div>
         </div>

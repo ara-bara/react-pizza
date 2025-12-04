@@ -1,6 +1,10 @@
 .wrapper {
   display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
   grid-template-columns: 40% 60%;
+  color: white;
+  padding: 125px 0;
 
   .konstructorImage {
     padding: 30px 30px;
@@ -70,9 +74,8 @@
 
 /* Контейнер всіх інгредієнтів у категорії */
 .items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* Одна карточка інгредієнта */
@@ -85,6 +88,7 @@
   transition: 0.2s;
   cursor: pointer;
   position: relative;
+  margin-bottom: 20px;
 
   .itemImage {
     img {

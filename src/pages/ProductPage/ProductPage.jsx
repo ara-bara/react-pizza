@@ -17,11 +17,13 @@ const ProductPage = ({
   onUpdateQuantity,
   totalItems,
   totalPrice,
+  subtotal, // ПРИЙМАЄМО
+  discountAmount, // ПРИЙМАЄМО
+  discount,
   onCheckout,
   onOpenCart,
   onCloseCart,
   cartOpen,
-  discount,
 }) => {
   const { id } = useParams();
   const numericId = Number(id);
@@ -37,6 +39,10 @@ const ProductPage = ({
         onUpdateQuantity={onUpdateQuantity}
         totalItems={totalItems}
         totalPrice={totalPrice}
+        // ✅ ПЕРЕДАЄМО НОВІ ПРОПСИ
+        subtotal={subtotal}
+        discountAmount={discountAmount}
+        // ============================
         onCheckout={onCheckout}
         onOpenCart={onOpenCart}
         onCloseCart={onCloseCart}
@@ -52,18 +58,15 @@ const ProductPage = ({
 
   return (
     <div style={{ padding: "50px", color: "#fff" }}>
-      <h1>{item.title}</h1>
-
-      <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
-
+            <h1>{item.title}</h1>
+            <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
+           {" "}
       <img
         src={process.env.PUBLIC_URL + "/img/" + item.img}
         alt={item.title}
         width={300}
       />
-
-      <p>{item.ingredients}</p>
-      <h2>{finalPrice} грн</h2>
+            <p>{item.ingredients}</p>      <h2>{finalPrice} грн</h2>   {" "}
     </div>
   );
 };

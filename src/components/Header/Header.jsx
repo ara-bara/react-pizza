@@ -18,6 +18,8 @@ const Header = ({
   cartOpen,
   onScrollToItems,
   onScrollToFooter,
+  subtotal,
+  discountAmount,
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -108,7 +110,7 @@ const Header = ({
             </div>
 
             <div className={styles.basketSum}>
-              {(totalPrice || 0).toFixed(2)} грн
+              {(totalPrice || 0).toFixed(0)} грн
             </div>
           </div>
 
@@ -117,6 +119,8 @@ const Header = ({
               orders={orders}
               onDelete={onDelete}
               onUpdateQuantity={onUpdateQuantity}
+              subtotal={subtotal}
+              discountAmount={discountAmount}
               totalPrice={totalPrice}
               onCheckout={onCheckout}
               closeCart={onCloseCart}

@@ -10,6 +10,8 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 2;
+  margin-top: 120px;
+  border-radius: 20px;
   @include wh(1276px, 503px);
   img {
     max-width: 100%;

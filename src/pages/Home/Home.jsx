@@ -15,6 +15,8 @@ const Home = ({
   checkout,
   totalItems,
   totalPrice,
+  subtotal,
+  discountAmount,
   onOpenCart,
   onCloseCart,
   cartOpen,
@@ -50,6 +52,8 @@ const Home = ({
         onUpdateQuantity={updateQuantity}
         totalItems={totalItems}
         totalPrice={totalPrice}
+        subtotal={subtotal}
+        discountAmount={discountAmount}
         onCheckout={checkout}
         onOpenCart={onOpenCart}
         onCloseCart={onCloseCart}

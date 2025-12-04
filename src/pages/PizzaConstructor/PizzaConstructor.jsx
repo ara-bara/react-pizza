@@ -13,11 +13,13 @@ const PizzaConstructor = ({
   onDelete,
   onUpdateQuantity,
   totalItems,
-  totalPrice: currentTotalPrice,
+  totalPrice: cartTotalPrice,
   onCheckout,
   onOpenCart,
   onCloseCart,
   cartOpen,
+  subtotal,
+  discountAmount,
 }) => {
   const categories = ["cheese", "meat", "vegetables", "fruits", "fish", "base"];
 
@@ -92,20 +94,20 @@ const PizzaConstructor = ({
 
   return (
     <>
-      {/* HEADER — ТЕПЕР ПОВНІСТЮ ОКРЕМО */}
       <Header
         orders={orders}
         onDelete={onDelete}
         onUpdateQuantity={onUpdateQuantity}
         totalItems={totalItems}
-        totalPrice={currentTotalPrice}
+        totalPrice={cartTotalPrice}
         onCheckout={onCheckout}
         onOpenCart={onOpenCart}
         onCloseCart={onCloseCart}
         cartOpen={cartOpen}
+        subtotal={subtotal}
+        discountAmount={discountAmount}
       />
 
-      {/* Увесь контент конструктора окремо */}
       <div className={styles.pageContent}>
         <div className={styles.wrapper}>
           <div>
@@ -129,21 +131,17 @@ const PizzaConstructor = ({
                     <div className={styles.conteinerPrice}>
                       <div className={styles.quantity}>
                         <img
-                          onClick={() =>
-                            changeQuantity(selectedItem.id, -1)
-                          }
+                          onClick={() => changeQuantity(selectedItem.id, -1)}
                           src={quantityMinus}
-                          alt="quantityMinus"
+                          alt="minus"
                         />
                         <span>{selectedItem.quantity}</span>
 
                         {selectedItem.category !== "base" && (
                           <img
-                            onClick={() =>
-                              changeQuantity(selectedItem.id, +1)
-                            }
+                            onClick={() => changeQuantity(selectedItem.id, +1)}
                             src={quantityPlus}
-                            alt="quantityPlus"
+                            alt="plus"
                           />
                         )}
                       </div>
@@ -160,10 +158,8 @@ const PizzaConstructor = ({
 
           <div>
             <h2>Інгредієнти</h2>
-            <SizePicker
-              pizzaSize={pizzaSize}
-              setPizzaSize={setPizzaSize}
-            />
+
+            <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
 
             {categories.map((cat) => (
               <div key={cat} className={styles.category}>
@@ -181,7 +177,7 @@ const PizzaConstructor = ({
 
                       return (
                         <div
-                          key={`${cat}-${item.id}`}
+                          key={item.id}
                           className={`${styles.item} ${
                             isSelected ? styles.itemSelected : ""
                           }`}
@@ -206,22 +202,14 @@ const PizzaConstructor = ({
 
                           <div className={styles.itemImage}>
                             <img
-                              src={
-                                process.env.PUBLIC_URL +
-                                "/img/" +
-                                item.img
-                              }
+                              src={process.env.PUBLIC_URL + "/img/" + item.img}
                               alt={item.name}
                             />
                           </div>
 
                           <div className={styles.name}>{item.name}</div>
-                          <div className={styles.weight}>
-                            {item.weight} г
-                          </div>
-                          <div className={styles.price}>
-                            {item.price} грн
-                          </div>
+                          <div className={styles.weight}>{item.weight} г</div>
+                          <div className={styles.price}>{item.price} грн</div>
                         </div>
                       );
                     })}
@@ -231,9 +219,7 @@ const PizzaConstructor = ({
           </div>
 
           <div className={styles.bottomBar}>
-            <div className={styles.priceBlock}>
-              Ціна: {finalTotal} грн
-            </div>
+            <div className={styles.priceBlock}>Ціна: {finalTotal} грн</div>
 
             <div className={styles.quantityBlock}>
               <button onClick={() => setCount((c) => Math.max(1, c - 1))}>
@@ -243,10 +229,7 @@ const PizzaConstructor = ({
               <button onClick={() => setCount((c) => c + 1)}>+</button>
             </div>
 
-            <button
-              className={styles.addButton}
-              onClick={handleAddPizza}
-            >
+            <button className={styles.addButton} onClick={handleAddPizza}>
               Додати в кошик
             </button>
           </div>

@@ -8,7 +8,6 @@ export function useCart() {
   const addToOrder = (item) => {
     const exists = orders.some((el) => el.id === item.id);
     if (!exists) {
-      // ВИПРАВЛЕННЯ: Використовуємо quantity з об'єкта item (якщо є)
       setOrders([...orders, { ...item, quantity: item.quantity || 1 }]);
     }
   };
@@ -32,10 +31,7 @@ export function useCart() {
   // ✔️ Оформити замовлення
   const checkout = () => {
     console.log("Замовлення:", orders);
-    const total = orders.reduce((sum, el) => sum + el.price * el.quantity, 0);
-    const discount = total >= 1000 ? total * 0.1 : 0;
-    const finalTotal = total - discount;
-    console.log("Загальна сума:", finalTotal);
+    console.log("Сума до оплати:", totalPrice);
     setOrders([]);
   };
 
@@ -43,14 +39,20 @@ export function useCart() {
   const openCart = () => setCartOpen(true);
   const closeCart = () => setCartOpen(false);
 
-  // 🧮 Підрахунок
+  // 🧮 Кількість товарів
   const totalItems = orders.reduce((sum, el) => sum + el.quantity, 0);
-  const totalPrice = orders.reduce(
-    (sum, el) => sum + el.quantity * el.price,
-    0
-  );
-  const discount = totalPrice >= 1000 ? 0.1 : 0;
-  const finalPrice = totalPrice * (1 - discount);
+
+  // 🔥 Сума без знижки
+  const subtotal = orders.reduce((sum, el) => sum + el.quantity * el.price, 0);
+
+  // 🔥 10% знижки при сумі ≥ 1000
+  const discountPercent = subtotal >= 1000 ? 0.1 : 0;
+
+  // 🔥 Сума знижки у грн
+  const discountAmount = subtotal * discountPercent;
+
+  // 🔥 Фінальна сума
+  const totalPrice = subtotal - discountAmount;
 
   return {
     orders,
@@ -64,7 +66,10 @@ export function useCart() {
     closeCart,
 
     totalItems,
-    totalPrice: finalPrice,
-    discount,
+
+    subtotal, // сума без знижки
+    discountPercent, // 0 або 0.1
+    discountAmount, // гривні знижки
+    totalPrice, // сума після знижки
   };
 }

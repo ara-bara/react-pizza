@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-pizza/static/css/main.87efb81a.css",
-    "main.js": "/react-pizza/static/js/main.c9e9f20a.js",
+    "main.css": "/react-pizza/static/css/main.7096253c.css",
+    "main.js": "/react-pizza/static/js/main.2a936ece.js",
     "static/media/AvenirNextCyr-Demi.eot": "/react-pizza/static/media/AvenirNextCyr-Demi.4b2189c473c87dbf4d5d.eot",
     "static/media/AvenirNextCyr-Demi.ttf": "/react-pizza/static/media/AvenirNextCyr-Demi.c234f5295ae22b8b0e28.ttf",
     "static/media/konstruktor.webp": "/react-pizza/static/media/konstruktor.8dba578f8319ff914c49.webp",
@@ -21,11 +21,11 @@
     "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.32e7d8c0a9addb9f7b2cf7eaa08e4c7e.svg",
     "static/media/plus.svg": "/react-pizza/static/media/plus.8e1af1c6c59b6f378abd1bba7964246e.svg",
     "static/media/minus.svg": "/react-pizza/static/media/minus.77eb0172bd1aeb531f6f83f6a755374d.svg",
-    "main.87efb81a.css.map": "/react-pizza/static/css/main.87efb81a.css.map",
-    "main.c9e9f20a.js.map": "/react-pizza/static/js/main.c9e9f20a.js.map"
+    "main.7096253c.css.map": "/react-pizza/static/css/main.7096253c.css.map",
+    "main.2a936ece.js.map": "/react-pizza/static/js/main.2a936ece.js.map"
   },
   "entrypoints": [
-    "static/css/main.87efb81a.css",
-    "static/js/main.c9e9f20a.js"
+    "static/css/main.7096253c.css",
+    "static/js/main.2a936ece.js"
   ]
 }

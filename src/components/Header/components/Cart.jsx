@@ -1,5 +1,3 @@
-// Cart.jsx
-
 import closeIcon from "../../../assets/icons/close-icon.svg";
 import "./Cart.scss";
 import CartItem from "./CartItem";
@@ -8,15 +6,12 @@ const Cart = ({
   orders,
   onDelete,
   onUpdateQuantity,
-  // Приймаємо нові пропси для підсумку
   subtotal,
   discountAmount,
   totalPrice,
   onCheckout,
   closeCart,
 }) => {
-  // Розрахунок відсотка знижки для передачі в CartItem
-  // Це необхідно, щоб CartItem знав, яку знижку застосувати до ціни кожного товару.
   const discountPercent = subtotal > 0 ? discountAmount / subtotal : 0;
 
   return (
@@ -36,7 +31,6 @@ const Cart = ({
           <CartItem
             key={item.id}
             item={item}
-            // Передаємо відсоток знижки в CartItem
             discount={discountPercent}
             onDelete={onDelete}
             onUpdateQuantity={onUpdateQuantity}
@@ -51,9 +45,7 @@ const Cart = ({
       {orders.length > 0 && (
         <div className="order-summary">
           <div>
-            {/* 1. Сума (Subtotal) */}
             <div>Сума: {subtotal.toFixed(0)} ₴</div>
-            {/* 2. Знижка (Discount Amount) */}
             <div>
               Знижка:{" "}
               <span className="discount-amount">

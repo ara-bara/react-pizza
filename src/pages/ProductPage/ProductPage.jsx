@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import SizePicker from "../../components/UI/SizePicker/SizePicker";
 import { itemsData } from "../Home/Home.data";
 import PizzaConstructor from "../PizzaConstructor/PizzaConstructor";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const sizeMultiplier = {
   30: 1,
@@ -17,8 +19,8 @@ const ProductPage = ({
   onUpdateQuantity,
   totalItems,
   totalPrice,
-  subtotal, // ПРИЙМАЄМО
-  discountAmount, // ПРИЙМАЄМО
+  subtotal,
+  discountAmount,
   discount,
   onCheckout,
   onOpenCart,
@@ -30,6 +32,7 @@ const ProductPage = ({
 
   const [pizzaSize, setPizzaSize] = useState("30");
 
+  // Якщо це конструктор
   if (numericId === 12) {
     return (
       <PizzaConstructor
@@ -39,10 +42,8 @@ const ProductPage = ({
         onUpdateQuantity={onUpdateQuantity}
         totalItems={totalItems}
         totalPrice={totalPrice}
-        // ✅ ПЕРЕДАЄМО НОВІ ПРОПСИ
         subtotal={subtotal}
         discountAmount={discountAmount}
-        // ============================
         onCheckout={onCheckout}
         onOpenCart={onOpenCart}
         onCloseCart={onCloseCart}
@@ -52,21 +53,53 @@ const ProductPage = ({
   }
 
   const item = itemsData.find((el) => el.id === numericId);
-  if (!item) return <h2>Товар не знайдено</h2>;
+  if (!item) return <h2 style={{ color: "white" }}>Товар не знайдено</h2>;
 
   const finalPrice = Math.round(item.price * sizeMultiplier[pizzaSize]);
 
   return (
-    <div style={{ padding: "50px", color: "#fff" }}>
-            <h1>{item.title}</h1>
-            <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
-           {" "}
-      <img
-        src={process.env.PUBLIC_URL + "/img/" + item.img}
-        alt={item.title}
-        width={300}
+    <div className="wrapper">
+      <Header
+        orders={orders}
+        onDelete={onDelete}
+        onUpdateQuantity={onUpdateQuantity}
+        totalItems={totalItems}
+        totalPrice={totalPrice}
+        subtotal={subtotal}
+        discountAmount={discountAmount}
+        onCheckout={onCheckout}
+        onOpenCart={onOpenCart}
+        onCloseCart={onCloseCart}
+        cartOpen={cartOpen}
       />
-            <p>{item.ingredients}</p>      <h2>{finalPrice} грн</h2>   {" "}
+
+      <main className={`content-area ${cartOpen ? "blur" : ""}`}>
+        <div
+          style={{
+            padding: "60px 20px",
+            color: "#fff",
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+        >
+          <h1>{item.title}</h1>
+
+          <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
+
+          <img
+            src={process.env.PUBLIC_URL + "/img/" + item.img}
+            alt={item.title}
+            width={300}
+            style={{ display: "block", margin: "20px 0" }}
+          />
+
+          <p>{item.ingredients}</p>
+
+          <h2 style={{ marginTop: "20px" }}>{finalPrice} грн</h2>
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };

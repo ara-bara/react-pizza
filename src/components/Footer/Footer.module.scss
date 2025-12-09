@@ -1,13 +1,16 @@
-.footer {
+.footerWrapper {
+  width: 100vw;  
+  margin-left: calc(50% - 50vw);  /* цей трюк дає реальні 100% ширини */
+  background: #171717;
+}
+
+.footerInner  {
   color: white;
   display: grid;
-  background-color: rgba(0, 0, 0, 0.1);
   grid-template-columns: 1fr 1fr 1fr;
   padding: 0 20px;
   height: 275px;
   padding-top: 30px;
-  border-left: 1px solid hsla(0, 0%, 100%, 0.04);
-  border-right: 1px solid hsla(0, 0%, 100%, 0.04);
   cursor: pointer;
   img {
     width: 24px;

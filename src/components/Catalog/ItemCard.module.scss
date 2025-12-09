@@ -10,9 +10,10 @@
   border-radius: 20px;
   background-color: #262323;
 
-  /*&:hover{
-      border: 1px solid #fff;
-      background-color: #2C2C2C;}*/
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.06);
+  }
   img {
     width: 100%;
     height: auto;

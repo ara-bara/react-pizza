@@ -18,7 +18,7 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <footer className={styles.footerWrapper}>
-      <Container className={styles.footer}>
+      <Container className={styles.footerInner}>
         <div className={styles.brandSection}>
           <img src={logoIcon} alt="Black Pizza — логотип" />
 

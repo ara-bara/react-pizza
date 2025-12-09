@@ -62,7 +62,7 @@ const Home = ({
         onScrollToFooter={scrollToFooter}
       />
 
-      <div className={cartOpen ? "blur" : ""}>
+      <main className={`content-area ${cartOpen ? "blur" : ""}`}>
         <Slider />
 
         <div ref={itemsRef}>
@@ -74,11 +74,8 @@ const Home = ({
             discount={discount}
           />
         </div>
-
-        <div ref={footerRef}>
-          <Footer />
-        </div>
-      </div>
+      </main>
+      <div ref={footerRef}><Footer/></div>
     </div>
   );
 };

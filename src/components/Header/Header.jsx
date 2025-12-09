@@ -87,6 +87,10 @@ const Header = ({
             Меню
           </Link>
 
+          <Link to="/souces">
+            Соуси
+          </Link>
+
           <Link to="/" onClick={handleContactsClick}>
             Контакти
           </Link>

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-pizza/static/css/main.17a461c7.css",
-    "main.js": "/react-pizza/static/js/main.67709a71.js",
+    "main.js": "/react-pizza/static/js/main.d77a5b23.js",
     "static/media/AvenirNextCyr-Demi.eot": "/react-pizza/static/media/AvenirNextCyr-Demi.4b2189c473c87dbf4d5d.eot",
     "static/media/AvenirNextCyr-Demi.ttf": "/react-pizza/static/media/AvenirNextCyr-Demi.c234f5295ae22b8b0e28.ttf",
     "static/media/konstruktor.webp": "/react-pizza/static/media/konstruktor.8dba578f8319ff914c49.webp",
@@ -22,10 +22,10 @@
     "static/media/plus.svg": "/react-pizza/static/media/plus.8e1af1c6c59b6f378abd1bba7964246e.svg",
     "static/media/minus.svg": "/react-pizza/static/media/minus.77eb0172bd1aeb531f6f83f6a755374d.svg",
     "main.17a461c7.css.map": "/react-pizza/static/css/main.17a461c7.css.map",
-    "main.67709a71.js.map": "/react-pizza/static/js/main.67709a71.js.map"
+    "main.d77a5b23.js.map": "/react-pizza/static/js/main.d77a5b23.js.map"
   },
   "entrypoints": [
     "static/css/main.17a461c7.css",
-    "static/js/main.67709a71.js"
+    "static/js/main.d77a5b23.js"
   ]
 }

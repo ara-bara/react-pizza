@@ -35,6 +35,8 @@ const Home = ({
     footerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+
+
   useEffect(() => {
     if (location.state?.scrollTo === "footer") {
       scrollToFooter();
@@ -74,8 +76,10 @@ const Home = ({
             discount={discount}
           />
         </div>
+        <div ref={footerRef}>
+          <Footer />
+        </div>
       </main>
-      <div ref={footerRef}><Footer/></div>
     </div>
   );
 };

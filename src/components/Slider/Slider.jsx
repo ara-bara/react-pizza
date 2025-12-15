@@ -28,6 +28,10 @@ const Slider = () => {
           `<span class="${styles.bullet} ${className}"></span>`,
       },
     });
+
+    return () => {
+      swiper.destroy(true, true);
+    };
   }, []);
 
   return (

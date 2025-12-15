@@ -73,17 +73,19 @@ const PizzaConstructor = ({
       customTitle = "Базова Піца";
     }
 
-    const finalTitle = `${customTitle}, ${pizzaSize} см`;
+    const finalTitle = `Піца ${pizzaSize} см (${ingredientNames
+      .slice(0, 2)
+      .join(", ")}${ingredientNames.length > 2 ? "…" : ""})`;
+
 
     const pizzaObject = {
       id: Date.now(),
       custom: true,
-      title: finalTitle,
-      size: pizzaSize,
-      ingredients: selectedIngredients,
+      title: `Піца ${pizzaSize} см`,
+      ingredients: selectedIngredients.map((i) => i.name),
       price: totalPrice,
       quantity: count,
-      img: "konstruktor.webp",
+      picture: "konstruktor.webp",
     };
 
     addToOrder(pizzaObject);
@@ -231,7 +233,7 @@ const PizzaConstructor = ({
 
             <button className={styles.addButton} onClick={handleAddPizza}>
               Додати в кошик
-            </button>
+            </button>ф
           </div>
         </div>
       </div>

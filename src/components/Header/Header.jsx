@@ -18,6 +18,7 @@ const Header = ({
   cartOpen,
   onScrollToItems,
   onScrollToFooter,
+  onScrollToSouce,
   subtotal,
   discountAmount,
 }) => {
@@ -63,6 +64,14 @@ const Header = ({
     }
   };
 
+  /** Соуси */
+  const handleSouceClick = (e) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    navigate("/souces");
+  };
+
+
   /** Кошик */
   const handleCartClick = () => {
     cartOpen ? onCloseCart() : onOpenCart();
@@ -87,7 +96,7 @@ const Header = ({
             Меню
           </Link>
 
-          <Link to="/souces">
+          <Link to="/" onClick={handleSouceClick}>
             Соуси
           </Link>
 

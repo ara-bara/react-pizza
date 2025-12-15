@@ -18,9 +18,8 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
       className={`${styles.item} ${styles[`item-${item.id}`]}`}
     >
       <img
-        src={process.env.PUBLIC_URL + "/img/" + item.img}
+        src={`${process.env.PUBLIC_URL}/img/${item.picture}`}
         alt={item.title}
-        className={styles.itemImg}
       />
 
       <div className={styles.itemTitle}>{item.title}</div>
@@ -35,7 +34,7 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
           <div
             className={styles.inCart}
             onClick={(e) => {
-              e.preventDefault(); 
+              e.preventDefault();
               onOpenCart();
             }}
           >
@@ -49,7 +48,7 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
             <h2
               className={styles.addToCart}
               onClick={(e) => {
-                e.preventDefault(); 
+                e.preventDefault();
                 onAdd(item);
               }}
             >

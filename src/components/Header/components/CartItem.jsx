@@ -7,41 +7,45 @@ const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
 
   return (
     <div className="order">
-      <div className="order-info">
-        <div className="order-info__img">
-          <img
-            src={`${process.env.PUBLIC_URL}/img/${item.picture}`}
-            alt={item.title}
-          />
-        </div>
-
-        <div className="order-info__text">
-          <h2>{item.title}</h2>
-          <p>{item.weight}</p>
-        </div>
-
-        <div className="delete-icon" onClick={() => onDelete(item.id)}>
-          <img src={deleteIcon} alt="Видалити" />
-        </div>
+      <div className="order-image">
+        <img
+          src={`${process.env.PUBLIC_URL}/img/${item.picture}`}
+          alt={item.title}
+        />
       </div>
+      <div>
+        <div className="order-header">
+          <div className="order-ingredients">
+            <h2>{item.title}</h2>
+            <p>
+              {Array.isArray(item.ingredients)
+                ? item.ingredients.join(", ")
+                : item.ingredients}
+            </p>
+          </div>
 
-      <div className="order-price">
-        <h2>
-          {finalPrice.toFixed(0)} <span>₴</span>
-        </h2>
+          <div className="delete-icon" onClick={() => onDelete(item.id)}>
+            <img src={deleteIcon} alt="Видалити" />
+          </div>
+        </div>
+        <div className="order-price">
+          <h2>
+            {finalPrice.toFixed(0)} <span>₴</span>
+          </h2>
 
-        <div className="quantity-control">
-          <img
-            src={arrowDown}
-            alt=""
-            onClick={() => onUpdateQuantity(item.id, -1)}
-          />
-          <span>{item.quantity}</span>
-          <img
-            src={arrowUp}
-            alt=""
-            onClick={() => onUpdateQuantity(item.id, 1)}
-          />
+          <div className="quantity-control">
+            <img
+              src={arrowDown}
+              alt=""
+              onClick={() => onUpdateQuantity(item.id, -1)}
+            />
+            <span>{item.quantity}</span>
+            <img
+              src={arrowUp}
+              alt=""
+              onClick={() => onUpdateQuantity(item.id, 1)}
+            />
+          </div>
         </div>
       </div>
     </div>

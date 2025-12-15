@@ -32,7 +32,6 @@ const ProductPage = ({
 
   const [pizzaSize, setPizzaSize] = useState("30");
 
-  // Якщо це конструктор
   if (numericId === 12) {
     return (
       <PizzaConstructor

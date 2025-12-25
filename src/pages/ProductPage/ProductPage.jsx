@@ -71,34 +71,35 @@ const ProductPage = ({
         onCloseCart={onCloseCart}
         cartOpen={cartOpen}
       />
+      <div className={`page-blur ${cartOpen ? "blur" : ""}`}>
+        <main className={`content-area ${cartOpen ? "blur" : ""}`}>
+          <div
+            style={{
+              padding: "60px 20px",
+              color: "#fff",
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            <h1>{item.title}</h1>
 
-      <main className={`content-area ${cartOpen ? "blur" : ""}`}>
-        <div
-          style={{
-            padding: "60px 20px",
-            color: "#fff",
-            maxWidth: "1200px",
-            margin: "0 auto",
-          }}
-        >
-          <h1>{item.title}</h1>
+            <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
 
-          <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
+            <img
+              src={process.env.PUBLIC_URL + "/img/" + item.img}
+              alt={item.title}
+              width={300}
+              style={{ display: "block", margin: "20px 0" }}
+            />
 
-          <img
-            src={process.env.PUBLIC_URL + "/img/" + item.img}
-            alt={item.title}
-            width={300}
-            style={{ display: "block", margin: "20px 0" }}
-          />
+            <p>{item.ingredients}</p>
 
-          <p>{item.ingredients}</p>
+            <h2 style={{ marginTop: "20px" }}>{finalPrice} грн</h2>
+          </div>
+        </main>
 
-          <h2 style={{ marginTop: "20px" }}>{finalPrice} грн</h2>
-        </div>
-      </main>
-
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };

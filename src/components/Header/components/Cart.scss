@@ -58,12 +58,19 @@
   object-fit: contain;
 }
 
-.order-image img.cart-img-custom {
-  max-width: 100px;
-  max-height: 100px;
+.order--constructor {
+  .order-image {
+    width: 175px;
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 105px;
+      height: 105px;
+    }
+  }
 }
-
-
 
 .order-header {
   padding-top: 30px;

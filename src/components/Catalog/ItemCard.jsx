@@ -49,7 +49,11 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
               className={styles.addToCart}
               onClick={(e) => {
                 e.preventDefault();
-                onAdd(item);
+                onAdd({
+                  ...item,
+                  quantity: 1,
+                  type: item.id === 12 ? "constructor" : "default",
+                });
               }}
             >
               Додати в кошик

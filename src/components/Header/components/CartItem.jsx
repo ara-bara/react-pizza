@@ -1,12 +1,17 @@
 import deleteIcon from "../../../assets/icons/basket.png";
-import arrowUp from "../../../assets/icons/plus.svg";
 import arrowDown from "../../../assets/icons/minus.svg";
+import arrowUp from "../../../assets/icons/plus.svg";
 
 const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
   const finalPrice = item.price * item.quantity * (1 - discount);
+  console.log("CART ITEM:", item.title, item.type);
 
   return (
-    <div className="order">
+    <div
+      className={`order ${
+        item.type === "constructor" ? "order--constructor" : ""
+      }`}
+    >
       <div className="order-image">
         <img
           src={`${process.env.PUBLIC_URL}/img/${item.picture}`}

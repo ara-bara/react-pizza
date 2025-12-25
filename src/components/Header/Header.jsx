@@ -27,12 +27,10 @@ const Header = ({
   const navigate = useNavigate();
   const location = useLocation();
 
-  /** Головна */
   const handleHomeClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
 
-    // Просто переходимо на головну
     if (location.pathname !== "/") {
       navigate("/");
     } else {
@@ -40,7 +38,6 @@ const Header = ({
     }
   };
 
-  /** Меню */
   const handleMenuClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -52,7 +49,6 @@ const Header = ({
     }
   };
 
-  /** Контакти */
   const handleContactsClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -64,15 +60,12 @@ const Header = ({
     }
   };
 
-  /** Соуси */
   const handleSouceClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
     navigate("/souces");
   };
 
-
-  /** Кошик */
   const handleCartClick = () => {
     cartOpen ? onCloseCart() : onOpenCart();
     setMenuOpen(false);
@@ -81,12 +74,10 @@ const Header = ({
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        {/* ЛОГО */}
         <div className={styles.logo} onClick={handleHomeClick}>
           <img src={logo} alt="Black Pizza Logo" />
         </div>
 
-        {/* Меню */}
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
           <Link to="/" onClick={handleHomeClick}>
             Головна
@@ -105,7 +96,6 @@ const Header = ({
           </Link>
         </nav>
 
-        {/* Бургер */}
         <div
           className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -115,7 +105,6 @@ const Header = ({
           <span></span>
         </div>
 
-        {/* Кошик */}
         <div className={styles.orderContainer}>
           <div className={styles.basket} onClick={handleCartClick}>
             <div className={styles.basketQuantity}>

@@ -104,7 +104,7 @@ export const itemsData = [
   },
   {
     id: 12,
-    title: "Створи свою піцу",
+    title: "Констуктор піци",
     ingredients: "вибирай начинку сам",
     img: "konstruktor.webp",
     picture: "konstruktor.webp",

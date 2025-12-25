@@ -81,6 +81,7 @@ const PizzaConstructor = ({
     const pizzaObject = {
       id: Date.now(),
       custom: true,
+      type: "constructor",
       title: `Піца ${pizzaSize} см`,
       ingredients: selectedIngredients.map((i) => i.name),
       price: totalPrice,
@@ -233,7 +234,7 @@ const PizzaConstructor = ({
 
             <button className={styles.addButton} onClick={handleAddPizza}>
               Додати в кошик
-            </button>ф
+            </button>
           </div>
         </div>
       </div>

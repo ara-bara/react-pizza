@@ -58,6 +58,18 @@
   object-fit: contain;
 }
 
+.order--souce {
+  .order-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    img {
+      width: 120px;
+    }
+  }
+}
+
 .order--constructor {
   .order-image {
     width: 175px;
@@ -81,7 +93,7 @@
     h2 {
       font-size: 15px;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin: 7px 0 4px 0;
     }
 
     p {
@@ -92,7 +104,6 @@
   }
 
   .delete-icon {
-    margin-top: 14px;
     width: 17px;
     cursor: pointer;
 

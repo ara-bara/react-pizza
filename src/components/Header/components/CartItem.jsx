@@ -4,13 +4,13 @@ import arrowUp from "../../../assets/icons/plus.svg";
 
 const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
   const finalPrice = item.price * item.quantity * (1 - discount);
-  console.log("CART ITEM:", item.title, item.type);
 
   return (
     <div
-      className={`order ${
-        item.type === "constructor" ? "order--constructor" : ""
-      }`}
+      className={`order
+    ${item.type === "constructor" ? "order--constructor" : ""}
+    ${item.type === "souce" ? "order--souce" : ""}
+  `}
     >
       <div className="order-image">
         <img

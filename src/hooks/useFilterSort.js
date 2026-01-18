@@ -8,14 +8,12 @@ export function useFilterSort(items) {
   useEffect(() => {
     let result = [...items];
 
-    // 🔍 фільтрація
     if (filterText.trim() !== "") {
       result = result.filter((item) =>
         item.title.toLowerCase().includes(filterText.toLowerCase())
       );
     }
 
-    // 🔽 сортування
     if (selectedSort) {
       result.sort((a, b) => {
         if (selectedSort === "price" || selectedSort === "weight") {

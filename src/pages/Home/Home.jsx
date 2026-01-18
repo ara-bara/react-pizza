@@ -27,22 +27,37 @@ const Home = ({
   const itemsRef = useRef(null);
   const footerRef = useRef(null);
 
+  const HEADER_HEIGHT = 115;
+
   const scrollToItems = () => {
-    itemsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!itemsRef.current) return;
+
+    const top = itemsRef.current.offsetTop - HEADER_HEIGHT;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   };
 
   const scrollToFooter = () => {
-    footerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!footerRef.current) return;
+
+    const top = footerRef.current.offsetTop - HEADER_HEIGHT;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   };
 
-
-
   useEffect(() => {
-    if (location.state?.scrollTo === "footer") {
-      scrollToFooter();
-    }
     if (location.state?.scrollTo === "items") {
       scrollToItems();
+    }
+
+    if (location.state?.scrollTo === "footer") {
+      scrollToFooter();
     }
   }, [location.state]);
 
@@ -65,7 +80,7 @@ const Home = ({
       />
 
       <main className={`content-area ${cartOpen ? "blur" : ""}`}>
-        <Slider />
+        <Slider onScrollToItems={scrollToItems} />
 
         <div ref={itemsRef}>
           <Items
@@ -76,6 +91,7 @@ const Home = ({
             discount={discount}
           />
         </div>
+
         <div ref={footerRef}>
           <Footer />
         </div>

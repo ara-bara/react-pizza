@@ -9,7 +9,7 @@
   .konstructorImage {
     padding: 30px 30px;
     img {
-      width: 400px;
+      width: 350px;
       display: block;
       margin: 0 auto;
     }
@@ -23,17 +23,27 @@
 
   h2 {
     font-size: 28px;
-    margin-bottom: 20px;
+  }
+  p {
+    max-width: 500px;
+    margin: 35px 0 5px 0;
+    color: white;
+    font-weight: 600;
   }
 }
 
 .containerSelectedIngredients {
   margin-right: 50px;
+  h2{
+    margin-bottom: 40px;
+  }
+  div {
+    margin: 0;
+  }
 }
 
-/* Контейнер для інгредієнтів */
 .category {
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .categoryTitle {
@@ -44,8 +54,7 @@
 
 .sizeButton {
   display: flex;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 15px;
 }
 
 .sizeButton button {
@@ -72,16 +81,17 @@
   box-shadow: 0 0 10px rgba(255, 90, 31, 0.4);
 }
 
-/* Контейнер всіх інгредієнтів у категорії */
+
 .items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-/* Одна карточка інгредієнта */
+
 .item {
+  margin: 0 auto;
   background: #222;
-  padding: 12px 16px;
+  padding: 12px 10px;
   border-radius: 10px;
   width: 150px;
   border: 1px solid #333;
@@ -104,7 +114,6 @@
     transform: scale(1.04);
   }
 
-  /* Іконка "вибрано" */
   .statusIcon {
     position: absolute;
     top: -8px;
@@ -127,11 +136,9 @@
     cursor: pointer;
   }
 
-  /* Коли інгредієнт вибраний */
   &.itemSelected {
     border: 1px solid #4fb045;
 
-    /* HOVER по вибраному елементу */
     &:hover {
       border: 1px solid #ff3b3b;
 
@@ -147,6 +154,9 @@
   .name {
     font-weight: 600;
     margin-bottom: 6px;
+    align-items: center;
+    height: 48px;
+    text-align: center;
   }
 
   .weight,
@@ -156,7 +166,6 @@
   }
 }
 
-/* Стиль вибраного інгредієнта у списку справа */
 .selectedItem {
   padding: 12px 16px;
   display: flex;
@@ -208,10 +217,6 @@
   }
 }
 
-/* ===============================
-   FIXED BOTTOM ADD-TO-CART PANEL
-   =============================== */
-
 .bottomBar {
   position: fixed;
   bottom: 25px;
@@ -237,7 +242,6 @@
   min-width: 120px;
 }
 
-/* Кількість */
 .quantityBlock {
   display: flex;
   align-items: center;
@@ -269,9 +273,9 @@
   }
 }
 
-/* Кнопка "Додати в кошик" */
+
 .addButton {
-  background: #1a1a1a; /* стильна червона кнопка як на твоїх сайтах */
+  background: #1a1a1a; 
   padding: 12px 28px;
   border-radius: 10px;
   color: #fff;

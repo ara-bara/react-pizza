@@ -1,3 +1,5 @@
+@use "/src/styles/Mixin.scss" as *;
+
 .shop-cart {
   position: fixed;
   top: 100px;
@@ -190,16 +192,9 @@
 
 .order-summary__button-action {
   width: 100%;
-  padding: 14px;
   background: linear-gradient(135deg, #e10600, #b00000);
   color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 0.4px;
-  transition: 0.2s;
+  @include custom-btn;
 
   &:hover {
     background: linear-gradient(135deg, #ff1a1a, #c00000);

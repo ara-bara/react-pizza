@@ -60,23 +60,6 @@ const PizzaConstructor = ({
     );
 
   const handleAddPizza = () => {
-    const ingredientNames = selectedIngredients.map((item) => item.name);
-    const limitedNames = ingredientNames.slice(0, 3);
-
-    let customTitle;
-    if (limitedNames.length > 0) {
-      customTitle = `Піца з ${limitedNames.join(", ")}`;
-      if (ingredientNames.length > 3) {
-        customTitle += " та ін.";
-      }
-    } else {
-      customTitle = "Базова Піца";
-    }
-
-    const finalTitle = `Піца ${pizzaSize} см (${ingredientNames
-      .slice(0, 2)
-      .join(", ")}${ingredientNames.length > 2 ? "…" : ""})`;
-
 
     const pizzaObject = {
       id: Date.now(),
@@ -119,10 +102,7 @@ const PizzaConstructor = ({
             </div>
 
             <div className={styles.containerSelectedIngredients}>
-              <h2 style={{ textAlign: "center" }}>Вибрані інгредієнти</h2>
-              <div style={{ textAlign: "center" }}>
-                Базова ціна включає лише тісто діаметром 30 см
-              </div>
+              <h2 style={{ textAlign: "center" }}>Вибрані інгредієнти :</h2>
 
               <div className={styles.selectedIngredients}>
                 {selectedIngredients.map((selectedItem) => (
@@ -161,6 +141,10 @@ const PizzaConstructor = ({
 
           <div>
             <h2>Інгредієнти</h2>
+            <p>
+              Зберіть смачну піцу за власним рецептом з інгредієнтів які ви
+              полюбляєте. Порція сиру вже входить в основу.
+            </p>
 
             <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
 

@@ -1,0 +1,223 @@
+@use "/src/styles/Mixin.scss" as *;
+
+.page {
+  
+
+  color: white;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.backLink{
+  button{
+    @include backLink;
+  }
+  margin-top: 125px;
+}
+.pageContent{
+  max-width: 1200px;
+  margin: 0 auto 10px auto;
+  padding: 20px 20px 40px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.imageWrapper {
+  flex: 0 0 380px;
+
+  img {
+    @include wh(100%, auto);
+    object-fit: contain;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.13);
+  border-top: 1px solid hsla(0, 0%, 100%, 0.13);
+  .summary {
+    display: flex;
+    align-items: center;
+    .summaryPrice {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0 20px 0 8px;
+    }
+    .summaryWeight {
+      color: #aaa;
+      font-size: 20px;
+      padding-top: 4px;
+    }
+  }
+  .quantityInCart {
+    font-size: 30px;
+  }
+  .buttons {
+    display: flex;
+    .quantity {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid hsla(0, 0%, 100%, 0.13);
+      border-radius: 12px;
+
+      .quantityBtn {
+        width: 50px;
+        background: #1a1a1a;
+        color: white;
+        border: none;
+        font-size: 25px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        min-width: 24px;
+        text-align: center;
+      }
+    }
+    .inCartBtn {
+      background: #2b2b2b;
+      border: 1px solid #3a3a3a;
+      @include souceBth;
+    }
+    .addToCartBtn {
+      background: #ff2e2e;
+      width: 180px;
+      @include souceBth;
+
+      &:hover {
+        background: #ff4646;
+        box-shadow: 0 4px 12px rgba(255, 50, 50, 0.3);
+      }
+    }
+  }
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    font-size: 42px;
+    font-weight: 700;
+  }
+
+  .price {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ff4444;
+  }
+
+  .weight {
+    font-size: 18px;
+    color: #aaa;
+  }
+}
+
+.similarSection {
+  margin-bottom: 30px;
+}
+.similarTitle {
+  margin-bottom: 32px;
+  color: rgba(255, 45, 45, 0.85);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.similarList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+
+  .similarCard {
+    background: #1c1a1a;
+    border-radius: 18px;
+    padding: 18px;
+    cursor: pointer;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(255, 45, 45, 0.15);
+    }
+
+    .imageWrapper {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.6));
+      }
+    }
+
+    .cardInfo {
+      text-align: center;
+
+      .cardTitle {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .cardMeta {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 14px;
+
+        .price {
+          color: #ff2d2d;
+          font-weight: 700;
+        }
+
+        .weight {
+          color: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+}

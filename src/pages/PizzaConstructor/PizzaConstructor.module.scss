@@ -1,11 +1,13 @@
-.wrapper {
-  display: grid;
+.wrapper{
+  padding-top: 120px;
   max-width: 1400px;
   margin: 0 auto;
+}
+.wrapperContent {
+  display: grid;
   grid-template-columns: 40% 60%;
   color: white;
-  padding: 125px 0;
-
+  
   .konstructorImage {
     padding: 30px 30px;
     img {

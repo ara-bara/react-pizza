@@ -1,0 +1,5 @@
+@use "/src/styles/Mixin.scss" as *;
+
+.backLink {
+  @include backLink;
+}

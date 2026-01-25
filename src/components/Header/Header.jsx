@@ -63,7 +63,7 @@ const Header = ({
   const handleSouceClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
-    navigate("/souces");
+    navigate("/sauces");
   };
 
   const handleCartClick = () => {

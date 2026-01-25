@@ -88,7 +88,7 @@ const Slider = ({ onScrollToItems }) => {
                 знайди ідеальне поєднання
               </p>
 
-              <Link to="/souces" className={styles.cta}>
+              <Link to="/sauces" className={styles.cta}>
                 Перейти до соусів
               </Link>
             </div>

@@ -1,9 +1,9 @@
 import Header from "../../components/Header/Header";
-import SouceList from "../../components/Souce/SouceList";
+import SauceList from "../../components/Sauce/SauceList";
 import Footer from "../../components/Footer/Footer";
 import { useEffect } from "react";
 
-const SoucesPage = (props) => {
+const SaucesPage = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,7 +26,7 @@ const SoucesPage = (props) => {
           Соуси
         </h2>
 
-        <SouceList />
+        <SauceList />
 
         <Footer />
       </div>
@@ -34,4 +34,4 @@ const SoucesPage = (props) => {
   );
 };
 
-export default SoucesPage;
+export default SaucesPage;

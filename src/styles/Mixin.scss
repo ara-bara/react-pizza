@@ -79,3 +79,22 @@
   letter-spacing: 0.4px;
   transition: 0.2s;
 }
+
+@mixin backLink{
+background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    transform: translateX(-2px);
+  }
+}

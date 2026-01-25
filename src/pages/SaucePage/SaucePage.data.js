@@ -1,4 +1,4 @@
-export const souceData = [
+export const sauceData = [
   {
     id: 1,
     title: "Соус Брусничний",

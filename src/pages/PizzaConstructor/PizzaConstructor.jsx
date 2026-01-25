@@ -6,6 +6,8 @@ import Header from "../../components/Header/Header";
 import SizePicker from "../../components/UI/SizePicker/SizePicker";
 import styles from "./PizzaConstructor.module.scss";
 import { ingredientsData } from "./ingredients";
+import BackLink from "../../components/UI/BackLink/BackLink";
+import backStyles from "../../components/UI/BackLink/BackLink.module.scss";
 
 const PizzaConstructor = ({
   addToOrder,
@@ -96,113 +98,132 @@ const PizzaConstructor = ({
 
       <div className={styles.pageContent}>
         <div className={styles.wrapper}>
-          <div>
-            <div className={styles.konstructorImage}>
-              <img src={picture} alt="Інтерактивний конструктор піци" />
-            </div>
-
-            <div className={styles.containerSelectedIngredients}>
-              <h2 style={{ textAlign: "center" }}>Вибрані інгредієнти :</h2>
-
-              <div className={styles.selectedIngredients}>
-                {selectedIngredients.map((selectedItem) => (
-                  <div className={styles.selectedItem} key={selectedItem.id}>
-                    <div className={styles.selectedName}>
-                      {selectedItem.name}
-                    </div>
-
-                    <div className={styles.conteinerPrice}>
-                      <div className={styles.quantity}>
-                        <img
-                          onClick={() => changeQuantity(selectedItem.id, -1)}
-                          src={quantityMinus}
-                          alt="minus"
-                        />
-                        <span>{selectedItem.quantity}</span>
-
-                        {selectedItem.category !== "base" && (
-                          <img
-                            onClick={() => changeQuantity(selectedItem.id, +1)}
-                            src={quantityPlus}
-                            alt="plus"
-                          />
-                        )}
-                      </div>
-
-                      <div className={styles.price}>
-                        {selectedItem.price * selectedItem.quantity} грн
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div
+            style={{
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            <BackLink
+              to="/"
+              state={{ scrollTo: "items" }}
+              className={backStyles.backLink}
+            >
+              ← До піц
+            </BackLink>
           </div>
+          <div className={styles.wrapperContent}>
+            <div>
+              <div className={styles.konstructorImage}>
+                <img src={picture} alt="Інтерактивний конструктор піци" />
+              </div>
+              <div className={styles.containerSelectedIngredients}>
+                <h2 style={{ textAlign: "center" }}>Вибрані інгредієнти :</h2>
 
-          <div>
-            <h2>Інгредієнти</h2>
-            <p>
-              Зберіть смачну піцу за власним рецептом з інгредієнтів які ви
-              полюбляєте. Порція сиру вже входить в основу.
-            </p>
+                <div className={styles.selectedIngredients}>
+                  {selectedIngredients.map((selectedItem) => (
+                    <div className={styles.selectedItem} key={selectedItem.id}>
+                      <div className={styles.selectedName}>
+                        {selectedItem.name}
+                      </div>
 
-            <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
+                      <div className={styles.conteinerPrice}>
+                        <div className={styles.quantity}>
+                          <img
+                            onClick={() => changeQuantity(selectedItem.id, -1)}
+                            src={quantityMinus}
+                            alt="minus"
+                          />
+                          <span>{selectedItem.quantity}</span>
 
-            {categories.map((cat) => (
-              <div key={cat} className={styles.category}>
-                <h3 className={styles.categoryTitle}>
-                  {cat[0].toUpperCase() + cat.slice(1)}
-                </h3>
-
-                <div className={styles.items}>
-                  {ingredientsData
-                    .filter((item) => item.category === cat)
-                    .map((item) => {
-                      const isSelected = selectedIngredients.some(
-                        (el) => el.id === item.id
-                      );
-
-                      return (
-                        <div
-                          key={item.id}
-                          className={`${styles.item} ${
-                            isSelected ? styles.itemSelected : ""
-                          }`}
-                          onClick={() => {
-                            if (!isSelected) {
-                              setSelectedIngredients((prev) => [
-                                ...prev,
-                                { ...item, quantity: 1 },
-                              ]);
-                            }
-                          }}
-                        >
-                          {isSelected && (
-                            <div
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                removerIngredient(item.id);
-                              }}
-                              className={styles.statusIcon}
-                            ></div>
-                          )}
-
-                          <div className={styles.itemImage}>
+                          {selectedItem.category !== "base" && (
                             <img
-                              src={process.env.PUBLIC_URL + "/img/" + item.img}
-                              alt={item.name}
+                              onClick={() =>
+                                changeQuantity(selectedItem.id, +1)
+                              }
+                              src={quantityPlus}
+                              alt="plus"
                             />
-                          </div>
-
-                          <div className={styles.name}>{item.name}</div>
-                          <div className={styles.weight}>{item.weight} г</div>
-                          <div className={styles.price}>{item.price} грн</div>
+                          )}
                         </div>
-                      );
-                    })}
+
+                        <div className={styles.price}>
+                          {selectedItem.price * selectedItem.quantity} грн
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div>
+              <h2>Інгредієнти</h2>
+              <p>
+                Зберіть смачну піцу за власним рецептом з інгредієнтів які ви
+                полюбляєте. Порція сиру вже входить в основу.
+              </p>
+
+              <SizePicker pizzaSize={pizzaSize} setPizzaSize={setPizzaSize} />
+
+              {categories.map((cat) => (
+                <div key={cat} className={styles.category}>
+                  <h3 className={styles.categoryTitle}>
+                    {cat[0].toUpperCase() + cat.slice(1)}
+                  </h3>
+
+                  <div className={styles.items}>
+                    {ingredientsData
+                      .filter((item) => item.category === cat)
+                      .map((item) => {
+                        const isSelected = selectedIngredients.some(
+                          (el) => el.id === item.id,
+                        );
+
+                        return (
+                          <div
+                            key={item.id}
+                            className={`${styles.item} ${
+                              isSelected ? styles.itemSelected : ""
+                            }`}
+                            onClick={() => {
+                              if (!isSelected) {
+                                setSelectedIngredients((prev) => [
+                                  ...prev,
+                                  { ...item, quantity: 1 },
+                                ]);
+                              }
+                            }}
+                          >
+                            {isSelected && (
+                              <div
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  removerIngredient(item.id);
+                                }}
+                                className={styles.statusIcon}
+                              ></div>
+                            )}
+
+                            <div className={styles.itemImage}>
+                              <img
+                                src={
+                                  process.env.PUBLIC_URL + "/img/" + item.img
+                                }
+                                alt={item.name}
+                              />
+                            </div>
+
+                            <div className={styles.name}>{item.name}</div>
+                            <div className={styles.weight}>{item.weight} г</div>
+                            <div className={styles.price}>{item.price} грн</div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className={styles.bottomBar}>

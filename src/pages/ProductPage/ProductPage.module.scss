@@ -1,0 +1,153 @@
+@use "/src/styles/Mixin.scss" as *;
+
+.container {
+  padding: 110px 20px 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.hero {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.mediaFrame {
+  display: grid;
+  place-items: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.55));
+  transform: translateZ(0);
+}
+
+
+.title {
+  font-weight: 700;
+  margin: 6px 0 18px;
+}
+
+
+.blockLabel {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 12px;
+}
+
+.ingredients {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.divider {
+  height: 1px;
+  margin: 16px 0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.payRow {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.priceBox {
+  display: grid;
+  gap: 6px;
+}
+
+.priceLabel {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.priceValue {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.addBtn {
+  border: none;
+  cursor: pointer;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #ff2a2a, #e10f0f);
+  box-shadow: 0 16px 35px rgba(255, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.addBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 42px rgba(255, 0, 0, 0.22);
+}
+
+.inCartBtn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.inCartBtn img {
+  width: 18px;
+  height: 18px;
+}
+
+.inCartBtn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .mediaFrame {
+    min-height: 360px;
+  }
+
+  .priceValue {
+    font-size: 40px;
+  }
+
+  .payRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .addBtn,
+  .inCartBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

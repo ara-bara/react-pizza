@@ -4,7 +4,7 @@
   text-align: center;
   font-family: "Montserrat", serif;
   margin-top: 20px;
-  border-radius:20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
 
   .filterForm {
     display: flex;
@@ -24,17 +24,31 @@
 .containerCustom {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-  @media (max-width: 1300px) {
+}
+@media (max-width: 1240px) {
+  .containerCustom {
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .containerCustom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 692px) {
+  .containerCustom {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 50%);
+  .main {
+    .filterForm {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
   }
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  padding-bottom: 50px;
 }

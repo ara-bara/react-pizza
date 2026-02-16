@@ -49,7 +49,9 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 26, 26, 0.06);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 26, 26, 0.06);
 
   h2 {
     font-weight: 700;
@@ -86,13 +88,16 @@ a {
   color: #fff;
   border: none;
 
-  box-shadow: 0 0 14px rgba(255, 26, 26, 0.4), 0 14px 30px rgba(0, 0, 0, 0.6);
+  box-shadow:
+    0 0 14px rgba(255, 26, 26, 0.4),
+    0 14px 30px rgba(0, 0, 0, 0.6);
 
   transition: 0.2s ease;
 
   &:hover {
     background: linear-gradient(135deg, #ff3333, #cc0000);
-    box-shadow: 0 0 18px rgba(255, 26, 26, 0.55),
+    box-shadow:
+      0 0 18px rgba(255, 26, 26, 0.55),
       0 16px 36px rgba(0, 0, 0, 0.65);
     transform: translateY(-1px);
   }
@@ -110,7 +115,6 @@ a {
   align-items: center;
   gap: 10px;
   margin-bottom: 28px;
-  
 }
 :global(.swiper-pagination-bullet) {
   width: 12px;
@@ -127,51 +131,70 @@ a {
   background: #ff1a1a;
 }
 
-
 @media (max-width: 1300px) {
   .sliderWrapper {
-    width: 1000px;
-    height: 300px;
-    margin: 126px auto 0 auto;
-    transform: translateX(-6px);
-  }
-
-  .customPagination {
-    bottom: 12px; 
+    width: 100%;
+    max-width: 1276px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .sliderWrapper {
-    width: 800px;
-    height: 250px;
+    margin-top: 100px;
   }
-}
 
-@media (max-width: 991px) {
-  .sliderWrapper {
-    width: 600px;
-    height: 190px;
+  .overlay {
+    max-width: 85%;
   }
 }
 
 @media (max-width: 768px) {
   .sliderWrapper {
-    width: 500px;
-    height: 335px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .overlay {
+    max-width: 90%;
+    left: 20px;
+    right: 20px;
+    top: auto;
+    bottom: 50px;
+    transform: none;
+  }
+
+
+  .overlay h2 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .customPagination{
+    margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .sliderWrapper {
-    width: 400px;
-    height: 270px;
+    aspect-ratio: 1 / 1;
   }
-}
 
-@media (max-width: 470px) {
-  .sliderWrapper {
-    width: 300px;
-    height: 205px;
+  .overlay {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .overlay h2 {
+    font-size: 18px;
+  }
+
+  .overlay p {
+    font-size: 13px;
   }
 }

@@ -1,6 +1,5 @@
 @use "/src/styles/Mixin.scss" as *;
 
-
 .item {
   text-decoration: none;
   position: relative;
@@ -14,10 +13,17 @@
     transform: scale(1.02);
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.06);
   }
-  img {
+  .itemImage {
+    object-fit: contain;
+    object-position: center;
     width: 100%;
-    height: auto;
-    border-radius: 20px;
+    height: 220px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
   .itemTitle {
     margin-top: 5px;
@@ -53,7 +59,8 @@
       @include text-styles(18px, 600, 0);
       opacity: 1;
       bottom: 9%;
-      left: 38%;
+      left: 50%;
+      transform: translate(-50%);
       h2 {
         text-align: center;
         width: 100%;
@@ -101,90 +108,31 @@
     }
   }
 }
-/*
-.item-1 {
-   transform: translateX(-2px);
-}
-
-.item-2 {
-   transform: translateX(29px);
-}
-
-.item-3 {
-   transform: translateX(61px);
-}
-
-.item-4 {
-   transform: translateX(92px);
-}
-
-.item-5 {
-   margin-bottom: 40px;
-   transform: translateX(-2px);
-}
-
-.item-6 {
-   margin-bottom: 40px;
-   transform: translateX(29px);
-}
-
-.item-7 {
-   margin-bottom: 40px;
-   transform: translateX(61px);
-}
-
-.item-8 {
-   margin-bottom: 40px;
-   transform: translateX(92px);
-}*/
-
-.item-12 {
-  img {
-    width: 200px;
-  }
-}
-
-@media (max-width: 1300px) {
+@media (max-width: 768px) {
   .item {
-    .priceContainer {
-      &:hover .addToCart,
-      .itemPrice,
-      .inCart {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
+    height: auto;
   }
 
-  .item-4,
-  .item-7 {
-    transform: translateX(0px);
+  .itemImage {
+    height: 200px;
   }
-
-  .item-5,
-  .item-8 {
-    margin-bottom: 40px;
-    transform: translateX(29px);
-  }
-
-  .item-6 {
-    margin-bottom: 40px;
-    transform: translateX(61px);
+  .priceContainer {
+    margin: 20px auto;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 692px) {
   .item {
-    transform: translateX(0px);
-
-    .priceContainer {
-      margin-bottom: 15px;
-    }
+    width: 350px;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 480px) {
   .item {
-    transform: translateX(-8px);
+    width: 95%;
+  }
+  .itemImage {
+    height: 170px;
   }
 }

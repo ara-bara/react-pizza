@@ -17,10 +17,12 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
       to={`/product/${item.id}`}
       className={`${styles.item} ${styles[`item-${item.id}`]}`}
     >
-      <img
-        src={`${process.env.PUBLIC_URL}/img/${item.picture}`}
-        alt={item.title}
-      />
+      <div className={styles.itemImage}>
+        <img
+          src={`${process.env.PUBLIC_URL}/img/${item.picture}`}
+          alt={item.title}
+        />
+      </div>
 
       <div className={styles.itemTitle}>{item.title}</div>
 

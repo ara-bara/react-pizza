@@ -1,57 +1,79 @@
-# React Pizza
+🍕 Black Pizza — Premium Pizza Delivery App
 
-Навчальний pet-project інтернет-магазину піци, створений на React.  
-Проєкт демонструє побудову багатосторінкового застосунку з каталогом піц, сторінками окремих товарів, сторінками соусів, конструктором піци та кошиком із підрахунком суми замовлення.
+Modern pizza delivery web application built with React.
+The project includes a pizza catalog, pizza constructor, sauces section, cart system, checkout flow, recently viewed products, and a fully responsive premium dark UI.
 
-## Demo
+🚀 Live Features
+Pizza catalog with detailed product pages
+Pizza constructor with custom ingredients
+Dynamic pizza size pricing
+Sauces catalog and sauce product pages
+Shopping cart with quantity controls
+Sticky cart sidebar
+Recently viewed pizzas
+Similar products section
+Checkout page with order summary
+Automatic discount system
+Responsive design for all devices
+Smooth navigation with React Router
+🛠️ Tech Stack
+React
+React Router DOM
+JavaScript (ES6+)
+SCSS Modules
+CSS/SCSS
+React Hooks
+Custom Hooks
+Local State Management
+Git & GitHub
+🎨 UI / UX
+Premium dark interface
+Responsive adaptive layout
+Mobile optimized cart
+Smooth hover animations
+Modern delivery-app inspired design
+Custom product cards and buttons
+📦 Main Pages
+Home page
+Pizza product page
+Pizza constructor
+Sauces page
+Sauce product page
+Checkout page
+⚡ Functionality
+Cart System
+Add/remove products
+Quantity controls
+Automatic total calculation
+Dynamic discounts
+Sauce support inside cart
+Constructor pizza support
+Pizza Constructor
+Choose pizza size
+Add/remove ingredients
+Dynamic price calculation
+Ingredient quantity controls
+Recently Viewed
+Stores viewed pizzas
+Quick access to previously opened products
+📱 Responsive Design
 
-[Live Demo](https://ara-bara.github.io/react-pizza)
+The project is fully optimized for:
 
-## Features
+Desktop
+Tablet
+Mobile devices
+📂 Installation
+git clone https://github.com/ara-bara/react-pizza.git
 
-- каталог піц на головній сторінці
-- сторінка окремого продукту
-- сторінки соусів
-- конструктор піци з вибором інгредієнтів
-- додавання товарів у кошик
-- зміна кількості товарів у кошику
-- видалення товарів із кошика
-- автоматичний підрахунок subtotal
-- автоматична знижка при сумі замовлення від 1000 грн
-- scroll to top при переходах між сторінками
-- фільтрація та сортування товарів
+cd react-pizza
 
-## Tech Stack
+npm install
 
-- React
-- React Router DOM
-- JavaScript
-- SCSS / CSS Modules
-- Bootstrap
-- Normalize.css
+npm start
+👨‍💻 Author
 
-## Project Structure
+Dmytro Valetskyi
 
-```bash
-src
-├── assets
-├── components
-│   ├── Catalog
-│   ├── Footer
-│   ├── Header
-│   ├── Sauce
-│   ├── Slider
-│   └── UI
-├── hooks
-│   ├── useCart.js
-│   ├── useFilterSort.js
-│   └── useScrollToTop.js
-├── pages
-│   ├── Home
-│   ├── PizzaConstructor
-│   ├── ProductPage
-│   ├── SaucePage
-│   └── SaucesPage
-├── styles
-├── App.js
-└── index.js
+GitHub:
+ara-bara/react-pizza

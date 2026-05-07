@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/react-pizza/static/css/main.6bc2cdcf.css",
-    "main.js": "/react-pizza/static/js/main.d25c65ab.js",
+    "main.css": "/react-pizza/static/css/main.c961424e.css",
+    "main.js": "/react-pizza/static/js/main.25847a07.js",
+    "static/media/sauce-bg.png": "/react-pizza/static/media/sauce-bg.53ba71a27acdd8b40906.png",
     "static/media/AvenirNextCyr-Demi.eot": "/react-pizza/static/media/AvenirNextCyr-Demi.4b2189c473c87dbf4d5d.eot",
     "static/media/AvenirNextCyr-Demi.ttf": "/react-pizza/static/media/AvenirNextCyr-Demi.c234f5295ae22b8b0e28.ttf",
     "static/media/konstruktor.webp": "/react-pizza/static/media/konstruktor.8dba578f8319ff914c49.webp",
@@ -13,19 +14,19 @@
     "static/media/logo.webp": "/react-pizza/static/media/logo.c009f6e59829b99e35a0.webp",
     "static/media/appstore.webp": "/react-pizza/static/media/appstore.55966c7a5c59091e6cff.webp",
     "static/media/googleplay.webp": "/react-pizza/static/media/googleplay.69ee3dc5df8e9e5c5814.webp",
-    "static/media/tiktok.svg": "/react-pizza/static/media/tiktok.4a031925f9950e73b1dcb347291ef3e0.svg",
-    "static/media/done-icon.svg": "/react-pizza/static/media/done-icon.ec51e25664401524a6d76be464bd60da.svg",
-    "static/media/instagram.svg": "/react-pizza/static/media/instagram.378f8d86afc3f17d5baa7f74750fb717.svg",
-    "static/media/youtube.svg": "/react-pizza/static/media/youtube.06c48775c49b09c689bb9b5470044c33.svg",
+    "static/media/tiktok.svg": "/react-pizza/static/media/tiktok.8945c10c51afbbb5320b5682373e7c37.svg",
+    "static/media/done-icon.svg": "/react-pizza/static/media/done-icon.113a4f004b5fc8b55e3100bc97379afa.svg",
+    "static/media/instagram.svg": "/react-pizza/static/media/instagram.bd94e1d490676a690477c88a4fdf7a6d.svg",
+    "static/media/youtube.svg": "/react-pizza/static/media/youtube.085ad1941b8475e98241060d8968c8a0.svg",
     "index.html": "/react-pizza/index.html",
-    "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.32e7d8c0a9addb9f7b2cf7eaa08e4c7e.svg",
-    "static/media/plus.svg": "/react-pizza/static/media/plus.8e1af1c6c59b6f378abd1bba7964246e.svg",
-    "static/media/minus.svg": "/react-pizza/static/media/minus.77eb0172bd1aeb531f6f83f6a755374d.svg",
-    "main.6bc2cdcf.css.map": "/react-pizza/static/css/main.6bc2cdcf.css.map",
-    "main.d25c65ab.js.map": "/react-pizza/static/js/main.d25c65ab.js.map"
+    "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.1d12044f40d8ce5688f2b70ded44871b.svg",
+    "static/media/plus.svg": "/react-pizza/static/media/plus.dba2202066d47b809f80c9d98305b7d6.svg",
+    "static/media/minus.svg": "/react-pizza/static/media/minus.d376b6fc2a053305da96d80bfc510fcc.svg",
+    "main.c961424e.css.map": "/react-pizza/static/css/main.c961424e.css.map",
+    "main.25847a07.js.map": "/react-pizza/static/js/main.25847a07.js.map"
   },
   "entrypoints": [
-    "static/css/main.6bc2cdcf.css",
-    "static/js/main.d25c65ab.js"
+    "static/css/main.c961424e.css",
+    "static/js/main.25847a07.js"
   ]
 }

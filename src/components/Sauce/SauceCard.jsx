@@ -1,25 +1,61 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./SauceCard.module.scss";
 
-const SauceCard = ({ sauce }) => {
+const SauceCard = ({ sauce, addToOrder, orders, onOpenCart }) => {
   const navigate = useNavigate();
 
+  const sauceId = `sauce-${sauce.id}`;
+
+  const sauceInCart = orders?.find((order) => order.id === sauceId);
+  const isInCart = Boolean(sauceInCart);
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+
+    if (isInCart) {
+      onOpenCart();
+      return;
+    }
+
+    addToOrder({
+      id: sauceId,
+      title: sauce.title,
+      price: sauce.price,
+      quantity: 1,
+      picture: sauce.picture,
+      type: "sauce",
+    });
+  };
+
   return (
-    <div
+    <article
       className={styles.sauceCard}
       onClick={() => navigate(`/sauce/${sauce.id}`)}
     >
-      <img
-        src={process.env.PUBLIC_URL + "/img/" + sauce.picture}
-        alt={sauce.title}
-      />
+      <div className={styles.imageBox}>
+        <img
+          src={process.env.PUBLIC_URL + "/img/" + sauce.picture}
+          alt={sauce.title}
+        />
+      </div>
 
-      <h3>{sauce.title}</h3>
+      <div className={styles.info}>
+        <h3>{sauce.title}</h3>
+        <p>{sauce.weight} г</p>
+      </div>
 
-      <div className={styles.weight}>{sauce.weight} г</div>
+      <div className={styles.bottom}>
+        <strong>{sauce.price} грн</strong>
 
-      <div className={styles.price}>{sauce.price} грн</div>
-    </div>
+        <button
+          type="button"
+          onClick={handleAddToCart}
+          className={isInCart ? styles.inCartBtn : ""}
+        >
+          🛒 {isInCart ? "В кошику" : "Додати"}
+        </button>
+      </div>
+    </article>
   );
 };
 

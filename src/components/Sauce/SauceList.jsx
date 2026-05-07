@@ -1,13 +1,15 @@
 import { sauceData } from "../../pages/SaucePage/SaucePage.data";
 import SauceCard from "./SauceCard";
-import styles from "./SauceList.module.scss"
+import styles from "./SauceList.module.scss";
 
-const SauceList = () => {
-    return (
-        <div className={styles.sauceList}>
-            {sauceData.map(s => (<SauceCard key={s.id} sauce={s}/>))}
-        </div>
-    )
-}
+const SauceList = (props) => {
+  return (
+    <div className={styles.sauceList}>
+      {sauceData.map((sauce) => (
+        <SauceCard key={sauce.id} sauce={sauce} {...props} />
+      ))}
+    </div>
+  );
+};
 
 export default SauceList;

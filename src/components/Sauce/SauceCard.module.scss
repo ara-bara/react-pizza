@@ -1,45 +1,132 @@
 .sauceCard {
-  background: #1d1d1d;
-  border-radius: 25px;
-  padding: 25px 20px;
-  text-align: center;
-  transition: 0.25s ease;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  min-height: 275px;
+  padding: 22px 18px 16px;
+  border-radius: 18px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    ),
+    #1b1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 
   &:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.06);
+    transform: translateY(-6px);
+    border-color: rgba(255, 35, 35, 0.45);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.48);
   }
+}
+
+.imageBox {
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
-    width: 180px;
-    height: 180px;
+    max-width: 190px;
+    max-height: 120px;
     object-fit: contain;
-    margin-bottom: 15px;
+    filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.45));
   }
+}
+
+.info {
+  text-align: center;
 
   h3 {
+    margin: 12px 0 8px;
+    color: #fff;
     font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: white;
+    line-height: 1.2;
+    font-weight: 800;
   }
 
-  .weight {
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.62);
     font-size: 15px;
-    color: #aaa;
-    margin-bottom: 8px;
+  }
+}
+
+.bottom {
+  margin-top: 18px;
+  padding-top: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  strong {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
   }
 
-  .price {
+  button {
+    cursor: pointer;
+    height: 36px;
+    padding: 0 18px;
+    border-radius: 999px;
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 35, 35, 0.85);
+
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background: #e50914;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.inCartBtn {
+  background: #e50914 !important;
+}
+
+@media (max-width: 768px) {
+  .sauceCard {
+    min-height: 255px;
+    padding: 20px 16px 14px;
+  }
+
+  .info h3 {
     font-size: 20px;
-    color: white;
-    font-weight: 600;
-    margin-top: auto;
+  }
+
+  .bottom {
+    strong {
+      font-size: 18px;
+    }
+
+    button {
+      padding: 0 14px;
+      font-size: 13px;
+    }
   }
 }

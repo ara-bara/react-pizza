@@ -8,9 +8,9 @@ const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
   return (
     <div
       className={`order
-    ${item.type === "constructor" ? "order--constructor" : ""}
-    ${item.type === "souce" ? "order--souce" : ""}
-  `}
+        ${item.type === "constructor" ? "order--constructor" : ""}
+        ${item.type === "sauce" ? "order--sauce" : ""}
+      `}
     >
       <div className="order-image">
         <img
@@ -18,10 +18,12 @@ const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
           alt={item.title}
         />
       </div>
+
       <div>
         <div className="order-header">
           <div className="order-ingredients">
             <h2>{item.title}</h2>
+
             <p>
               {Array.isArray(item.ingredients)
                 ? item.ingredients.join(", ")
@@ -33,6 +35,7 @@ const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
             <img src={deleteIcon} alt="Видалити" />
           </div>
         </div>
+
         <div className="order-price">
           <h2>
             {finalPrice.toFixed(0)} <span>₴</span>
@@ -44,7 +47,9 @@ const CartItem = ({ item, onDelete, onUpdateQuantity, discount }) => {
               alt=""
               onClick={() => onUpdateQuantity(item.id, -1)}
             />
+
             <span>{item.quantity}</span>
+
             <img
               src={arrowUp}
               alt=""

@@ -86,16 +86,22 @@ const Checkout = ({
             {orders.length === 0 ? (
               <p>Кошик порожній</p>
             ) : (
-              orders.map((item) => (
-                <div key={item.id} className={styles.checkoutItem}>
-                  <div className={styles.checkoutItemInfo}>
-                    <span>{item.title}</span>
-                    <small>{item.qty} шт</small>
-                  </div>
+              orders.map((item) => {
+                const quantity = item.quantity || 1;
+                const itemTotal = item.price * quantity;
 
-                  <div>{(item.price * item.qty).toFixed(0)} ₴</div>
-                </div>
-              ))
+                return (
+                  <div className={styles.orderItem} key={item.id}>
+                    <div className={styles.orderInfo}>
+                      <h3>{item.title}</h3>
+
+                      <span>{quantity} шт</span>
+                    </div>
+
+                    <strong>{itemTotal.toFixed(0)} ₴</strong>
+                  </div>
+                );
+              })
             )}
 
             <div className={styles.checkoutTotal}>

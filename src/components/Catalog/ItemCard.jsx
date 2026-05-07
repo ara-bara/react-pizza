@@ -3,14 +3,23 @@ import doneIcon from "../../assets/icons/done-icon.svg";
 import styles from "./ItemCard.module.scss";
 
 const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
-  const isInCart = orders.some((order) => order.id === item.id);
   const itemInCart = orders.find((order) => order.id === item.id);
+  const isInCart = Boolean(itemInCart);
 
-  const totalPriceForItem = itemInCart
-    ? itemInCart.price * itemInCart.quantity
-    : 0;
+  const handleAddToCart = (e) => {
+    e.preventDefault();
 
-  const finalPrice = totalPriceForItem * (1 - discount);
+    onAdd({
+      ...item,
+      quantity: 1,
+      type: item.id === 12 ? "constructor" : "default",
+    });
+  };
+
+  const handleOpenCart = (e) => {
+    e.preventDefault();
+    onOpenCart();
+  };
 
   return (
     <Link
@@ -24,43 +33,39 @@ const ItemCard = ({ item, orders, onAdd, onOpenCart, discount }) => {
         />
       </div>
 
-      <div className={styles.itemTitle}>{item.title}</div>
+      <div className={styles.itemContent}>
+        <h3 className={styles.itemTitle}>{item.title}</h3>
 
-      <div className={styles.itemDescription}>
-        <span className={styles.itemWeight}>{item.weight}</span>
-        <span className={styles.itemIngredients}>{item.ingredients}</span>
+        <p className={styles.itemDescription}>
+          <span className={styles.itemWeight}>{item.weight}</span>
+          <span className={styles.itemIngredients}> - {item.ingredients}</span>
+        </p>
       </div>
 
-      <div className={styles.priceContainer}>
+      <div className={styles.cardFooter}>
         {isInCart ? (
-          <div
-            className={styles.inCart}
-            onClick={(e) => {
-              e.preventDefault();
-              onOpenCart();
-            }}
+          <button
+            type="button"
+            className={`${styles.cardButton} ${styles.buttonInCart}`}
+            onClick={handleOpenCart}
           >
-            <img src={doneIcon} alt="Done" className={styles.doneIcon} />В
-            кошику <span>{itemInCart.quantity}</span> шт за{" "}
-            <span>{finalPrice.toFixed(0)}</span> грн
-          </div>
+            <img src={doneIcon} alt="" className={styles.doneIcon} />
+
+            <span className={styles.cartText}>
+              <span>В кошику</span>
+              <span className={styles.dot}>·</span>
+              <span>{itemInCart.quantity} шт</span>
+            </span>
+          </button>
         ) : (
-          <>
-            <h2 className={styles.itemPrice}>{item.price} грн</h2>
-            <h2
-              className={styles.addToCart}
-              onClick={(e) => {
-                e.preventDefault();
-                onAdd({
-                  ...item,
-                  quantity: 1,
-                  type: item.id === 12 ? "constructor" : "default",
-                });
-              }}
-            >
-              Додати в кошик
-            </h2>
-          </>
+          <button
+            type="button"
+            className={`${styles.cardButton} ${styles.buttonDefault}`}
+            onClick={handleAddToCart}
+          >
+            <span className={styles.price}>{item.price} грн</span>
+            <span className={styles.hoverText}>Додати в кошик</span>
+          </button>
         )}
       </div>
     </Link>

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import closeIcon from "../../../assets/icons/close-icon.svg";
 import "./Cart.scss";
 import CartItem from "./CartItem";
@@ -9,15 +10,21 @@ const Cart = ({
   subtotal,
   discountAmount,
   totalPrice,
-  onCheckout,
   closeCart,
 }) => {
+  const navigate = useNavigate();
+
   const discountPercent = subtotal > 0 ? discountAmount / subtotal : 0;
+
+  const handleCheckout = () => {
+    closeCart();
+    navigate("/checkout");
+  };
 
   return (
     <div className="shop-cart">
       <div className="cart-header">
-        <h2>Корзина</h2>
+        <h2>Корзина ({orders.length})</h2>
         <img
           src={closeIcon}
           alt="Закрити"
@@ -53,13 +60,15 @@ const Cart = ({
               </span>
             </div>
           </div>
+
           <div className="order-summary__button">
             <div>До сплати: {totalPrice.toFixed(0)} ₴</div>
+
             <button
               className="order-summary__button-action"
-              onClick={onCheckout}
+              onClick={handleCheckout}
             >
-              Оформити
+              Перейти до оформлення
             </button>
           </div>
         </div>

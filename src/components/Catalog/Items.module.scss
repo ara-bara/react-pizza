@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     gap: 100px;
+    margin-bottom: 30px;
 
     .searchInput {
       @include field;
@@ -23,25 +24,43 @@
 
 .containerCustom {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: 20px;
 }
+
 @media (max-width: 1240px) {
   .containerCustom {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
     gap: 24px;
   }
 }
 
 @media (max-width: 992px) {
   .containerCustom {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 340px);
+    justify-content: center;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerCustom {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .main {
+    .filterForm {
+      gap: 24px;
+    }
   }
 }
 
 @media (max-width: 692px) {
   .containerCustom {
     grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
     gap: 18px;
   }
 

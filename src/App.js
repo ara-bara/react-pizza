@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import SaucePage from "./pages/SaucePage/SaucePage";
 import SaucesPage from "./pages/SaucesPage/SaucesPage";
+import Checkout from "./pages/CheckOut/CheckOut";
 import { useCart } from "./hooks/useCart";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
@@ -21,7 +22,7 @@ function AppRoutes({
   openCart,
   closeCart,
 }) {
-  useScrollToTop(); // ✅ всередині Router
+  useScrollToTop();
 
   return (
     <Routes>
@@ -104,6 +105,20 @@ function AppRoutes({
             onOpenCart={openCart}
             onCloseCart={closeCart}
             cartOpen={cartOpen}
+          />
+        }
+      />
+
+      <Route
+        path="/checkout"
+        element={
+          <Checkout
+            orders={orders}
+            totalItems={totalItems}
+            subtotal={subtotal}
+            discountAmount={discountAmount}
+            totalPrice={totalPrice}
+            checkout={checkout}
           />
         }
       />

@@ -18,7 +18,6 @@ const Header = ({
   cartOpen,
   onScrollToItems,
   onScrollToFooter,
-  onScrollToSouce,
   subtotal,
   discountAmount,
 }) => {
@@ -74,6 +73,15 @@ const Header = ({
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
+        <div
+          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <div className={styles.logo} onClick={handleHomeClick}>
           <img src={logo} alt="Black Pizza Logo" />
         </div>
@@ -96,24 +104,17 @@ const Header = ({
           </Link>
         </nav>
 
-        <div
-          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
         <div className={styles.orderContainer}>
           <div className={styles.basket} onClick={handleCartClick}>
-            <div className={styles.basketQuantity}>
-              <span>{totalItems}</span>
-            </div>
+            <span className={styles.basketIcon}>🛒</span>
 
-            <div className={styles.basketSum}>
+            <span className={styles.basketSum}>
               {(totalPrice || 0).toFixed(0)} грн
-            </div>
+            </span>
+
+            {totalItems > 0 && (
+              <span className={styles.basketBadge}>{totalItems}</span>
+            )}
           </div>
 
           {cartOpen && (

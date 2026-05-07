@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -21,7 +21,6 @@ const ProductPage = ({
   totalPrice,
   subtotal,
   discountAmount,
-  discount,
   onCheckout,
   onOpenCart,
   onCloseCart,
@@ -31,6 +30,21 @@ const ProductPage = ({
   const numericId = Number(id);
 
   const [pizzaSize, setPizzaSize] = useState("30");
+
+  const item = itemsData.find((el) => el.id === numericId);
+
+  useEffect(() => {
+    if (!item || numericId === 12) return;
+
+    const recent = JSON.parse(localStorage.getItem("recentPizzas")) || [];
+
+    const updatedRecent = [
+      item,
+      ...recent.filter((pizza) => pizza.id !== item.id),
+    ].slice(0, 6);
+
+    localStorage.setItem("recentPizzas", JSON.stringify(updatedRecent));
+  }, [item, numericId]);
 
   if (numericId === 12) {
     return (
@@ -51,7 +65,6 @@ const ProductPage = ({
     );
   }
 
-  const item = itemsData.find((el) => el.id === numericId);
   if (!item) return <h2 style={{ color: "white" }}>Товар не знайдено</h2>;
 
   const finalPrice = Math.round(item.price * sizeMultiplier[pizzaSize]);
@@ -121,7 +134,6 @@ const ProductPage = ({
                   <div className={styles.blockLabel}>Склад</div>
                   <p className={styles.ingredients}>{item.ingredients}</p>
                 </div>
-
 
                 <div className={styles.payRow}>
                   <div className={styles.priceBox}>

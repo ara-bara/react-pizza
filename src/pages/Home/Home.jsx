@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Items from "../../components/Catalog/Items";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import RecentlyViewed from "../../components/RecentlyViewed/RecentlyViewed";
 import Slider from "../../components/Slider/Slider";
 import { itemsData } from "./Home.data";
 
@@ -81,6 +82,8 @@ const Home = ({
 
       <main className={`content-area ${cartOpen ? "blur" : ""}`}>
         <Slider onScrollToItems={scrollToItems} />
+
+        <RecentlyViewed />
 
         <div ref={itemsRef}>
           <Items

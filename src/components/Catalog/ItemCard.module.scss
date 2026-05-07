@@ -1,38 +1,66 @@
 @use "/src/styles/Mixin.scss" as *;
 
 .item {
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 390px;
-  padding: 22px 18px 24px;
-  margin: 0 10px 20px;
+  min-height: 400px;
+  padding: 24px 20px;
+  margin: 0 10px 22px;
   text-decoration: none;
-  border: 1px solid hsla(0, 0%, 100%, 0.05);
-  border-radius: 20px;
-  background-color: #262323;
+  border-radius: 24px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 45%),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    ),
+    #1d1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+    transform: translateY(-8px);
+    border-color: rgba(255, 45, 45, 0.28);
+
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.42),
+      0 0 0 1px rgba(255, 45, 45, 0.08);
   }
 }
 
 .itemImage {
   width: 100%;
-  height: 190px;
-  margin-bottom: 14px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 
   img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 22px 24px rgba(0, 0, 0, 0.5));
+    transition: transform 0.35s ease;
   }
+}
+
+.item:hover .itemImage img {
+  transform: scale(1.04) rotate(-2deg);
 }
 
 .itemContent {
@@ -41,10 +69,10 @@
 }
 
 .itemTitle {
-  margin: 0 0 8px;
+  margin: 0 0 9px;
   color: #ffffff;
   line-height: 1.15;
-  @include text-styles(24px, 600, 0);
+  @include text-styles(24px, 700, 0);
 }
 
 .itemDescription {
@@ -56,12 +84,12 @@
 }
 
 .itemWeight {
-  color: red;
-  font-weight: 700;
+  color: #ff2d2d;
+  font-weight: 800;
 }
 
 .itemIngredients {
-  color: gray;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .cardFooter {
@@ -77,19 +105,19 @@
   min-height: 56px;
   padding: 0 16px;
   overflow: hidden;
-  border: 1px solid #ffffff;
   border-radius: 32px;
-  background-color: transparent;
   color: #ffffff;
   font-family: inherit;
   cursor: pointer;
   line-height: 1.2;
-  @include text-styles(16px, 600, 0);
+  @include text-styles(16px, 700, 0);
+
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 
   &:active {
     transform: scale(0.98);
@@ -97,15 +125,21 @@
 }
 
 .buttonDefault {
-  background: rgba(255, 255, 255, 0.06);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  backdrop-filter: blur(10px);
 
   .price,
   .hoverText {
     display: flex;
     align-items: center;
     justify-content: center;
+
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
@@ -114,7 +148,8 @@
   .price {
     opacity: 1;
     transform: translateY(0);
-    @include text-styles(18px, 700, 0);
+    font-size: 19px;
+    font-weight: 800;
   }
 
   .hoverText {
@@ -122,11 +157,14 @@
     inset: 0;
     opacity: 0;
     transform: translateY(12px);
+    font-size: 15px;
+    font-weight: 700;
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #ff2d2d, #d90000);
+    border-color: transparent;
+    box-shadow: 0 10px 24px rgba(255, 45, 45, 0.28);
 
     .price {
       opacity: 0;
@@ -142,7 +180,7 @@
 
 .buttonInCart {
   gap: 7px;
-  border-color: rgba(0, 210, 106, 0.75);
+  border: 1px solid rgba(0, 210, 106, 0.75);
   background: rgba(0, 210, 106, 0.06);
   color: #ffffff;
   padding: 0 14px;
@@ -154,12 +192,18 @@
   }
 }
 
+.doneIcon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
 .cartText {
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .dot {
@@ -168,44 +212,33 @@
 
 @media (max-width: 1200px) {
   .item {
-    min-height: 380px;
-    padding: 20px 16px 22px;
-    margin: 0 8px 18px;
+    min-height: 385px;
+    padding: 22px 18px;
+    margin: 0 8px 20px;
   }
 
   .itemImage {
-    height: 180px;
+    height: 190px;
   }
 
   .itemTitle {
-    @include text-styles(23px, 600, 0);
-  }
-
-  .itemDescription {
-    max-width: 230px;
-    @include text-styles(13px, 500, 0);
-  }
-
-  .cardButton {
-    min-height: 54px;
+    @include text-styles(23px, 700, 0);
   }
 }
 
 @media (max-width: 992px) {
   .item {
-    min-height: 350px;
-    padding: 18px 14px 20px;
+    min-height: 360px;
+    padding: 20px 16px;
     margin: 0 6px 18px;
   }
 
   .itemImage {
-    height: 165px;
-    margin-bottom: 12px;
+    height: 170px;
   }
 
   .itemTitle {
-    margin-bottom: 7px;
-    @include text-styles(21px, 600, 0);
+    @include text-styles(21px, 700, 0);
   }
 
   .itemDescription {
@@ -214,19 +247,10 @@
     @include text-styles(12px, 500, 0);
   }
 
-  .cardFooter {
-    margin-top: 18px;
-  }
-
   .cardButton {
-    width: 86%;
-    min-height: 48px;
+    width: 88%;
+    min-height: 50px;
     margin: 0 auto;
-    padding: 0 14px;
-  }
-
-  .price {
-    @include text-styles(17px, 700, 0);
   }
 
   .cartText {
@@ -237,30 +261,10 @@
 @media (max-width: 768px) {
   .item {
     min-height: 350px;
-    padding: 18px 14px 20px;
-    margin: 0 6px 18px;
   }
 
   .itemImage {
     height: 160px;
-  }
-
-  .itemTitle {
-    @include text-styles(21px, 600, 0);
-  }
-
-  .itemDescription {
-    max-width: 210px;
-    @include text-styles(12px, 500, 0);
-  }
-
-  .cardButton {
-    min-height: 50px;
-    padding: 0 14px;
-  }
-
-  .cartText {
-    font-size: 13px;
   }
 
   .doneIcon {
@@ -282,20 +286,12 @@
     height: 155px;
   }
 
-  .itemTitle {
-    @include text-styles(21px, 600, 0);
-  }
-
   .itemDescription {
     max-width: 260px;
-    line-height: 1.45;
-  }
-
-  .cardFooter {
-    margin-top: 18px;
   }
 
   .cardButton {
+    width: 100%;
     min-height: 50px;
   }
 }
@@ -312,8 +308,7 @@
   }
 
   .itemTitle {
-    margin-bottom: 6px;
-    @include text-styles(20px, 600, 0);
+    @include text-styles(20px, 700, 0);
   }
 
   .itemDescription {
@@ -321,17 +316,13 @@
     @include text-styles(12px, 500, 0);
   }
 
-  .cardFooter {
-    margin-top: 16px;
-  }
-
   .cardButton {
     min-height: 48px;
     border-radius: 28px;
   }
 
-  .price {
-    @include text-styles(16px, 700, 0);
+  .buttonDefault .price {
+    font-size: 16px;
   }
 
   .cartText {

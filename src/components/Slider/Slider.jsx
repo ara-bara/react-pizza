@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import banner1 from "../../assets/img/baner1.webp";
-import banner2 from "../../assets/img/baner2.webp";
-import banner3 from "../../assets/img/baner3.webp";
+import banner1 from "../../assets/img/baner3.png";
+import banner2 from "../../assets/img/baner1.png";
+import banner3 from "../../assets/img/baner2.png";
 
 import styles from "./Slider.module.scss";
 

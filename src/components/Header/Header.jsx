@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import logo from "../../assets/icons/logo.webp";
+import logo from "../../assets/icons/logo.png";
 import Cart from "./components/Cart";
 
 import styles from "./Header.module.scss";
@@ -83,7 +83,7 @@ const Header = ({
         </div>
 
         <div className={styles.logo} onClick={handleHomeClick}>
-          <img src={logo} alt="Black Pizza Logo" />
+          <img src={logo} alt="React Pizza Logo" />
         </div>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import quantityMinus from "../../assets/icons/minus.svg";
 import quantityPlus from "../../assets/icons/plus.svg";
-import picture from "../../assets/img/konstruktor.webp";
+import picture from "../../assets/img/konstruktor.png";
 import Header from "../../components/Header/Header";
 import SizePicker from "../../components/UI/SizePicker/SizePicker";
 import styles from "./PizzaConstructor.module.scss";

@@ -84,20 +84,17 @@ a {
   cursor: pointer;
   text-decoration: none;
 
-  background: linear-gradient(135deg, #ff1a1a, #b30000);
+  background: #d97706;
   color: #fff;
   border: none;
-
   box-shadow:
-    0 0 14px rgba(255, 26, 26, 0.4),
+    0 0 14px rgba(245, 158, 11, 0.4),
     0 14px 30px rgba(0, 0, 0, 0.6);
-
   transition: 0.2s ease;
 
   &:hover {
-    background: linear-gradient(135deg, #ff3333, #cc0000);
     box-shadow:
-      0 0 18px rgba(255, 26, 26, 0.55),
+      0 0 18px rgba(255, 159, 28, 0.55),
       0 16px 36px rgba(0, 0, 0, 0.65);
     transform: translateY(-1px);
   }
@@ -166,7 +163,6 @@ a {
     transform: none;
   }
 
-
   .overlay h2 {
     font-size: 20px;
   }
@@ -175,7 +171,7 @@ a {
     font-size: 14px;
   }
 
-  .customPagination{
+  .customPagination {
     margin-bottom: 10px;
   }
 }

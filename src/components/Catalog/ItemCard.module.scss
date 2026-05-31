@@ -33,7 +33,7 @@
 
   &:hover {
     transform: translateY(-8px);
-    border-color: rgba(255, 45, 45, 0.28);
+    border-color: rgba(217, 119, 6, 0.7);
 
     box-shadow:
       0 24px 60px rgba(0, 0, 0, 0.42),
@@ -84,7 +84,7 @@
 }
 
 .itemWeight {
-  color: #ff2d2d;
+  color: #d97706;
   font-weight: 800;
 }
 
@@ -162,7 +162,7 @@
   }
 
   &:hover {
-    background: linear-gradient(135deg, #ff2d2d, #d90000);
+    background: #ea8508;
     border-color: transparent;
     box-shadow: 0 10px 24px rgba(255, 45, 45, 0.28);
 

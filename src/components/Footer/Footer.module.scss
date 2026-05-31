@@ -1,93 +1,135 @@
 .footerWrapper {
-  width: 100vw;
-  margin-left: calc(50% - 50vw); /* цей трюк дає реальні 100% ширини */
-  background: #171717;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 0 20px;
 }
 
-.footerInner {
-  color: white;
+.footerCard {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0 20px;
-  height: 275px;
-  padding-top: 30px;
-  cursor: pointer;
+  grid-template-columns: 1.1fr 1fr 0.9fr;
+  gap: 36px;
+  padding: 32px 36px;
+  color: #fff;
+  background: linear-gradient(145deg, #1d1d1d, #151515);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+.brandSection {
   img {
-    width: 24px;
+    width: 170px;
+    margin-bottom: 18px;
   }
+
+  p {
+    max-width: 330px;
+    margin: 0;
+    color: #c6c6c6;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+.infoSection {
   h2 {
-    font-size: 20px;
+    margin-bottom: 14px;
+    font-size: 18px;
   }
+
+  p {
+    max-width: 340px;
+    margin: 0 0 10px;
+    color: #c6c6c6;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+.contactsSection {
+  h2 {
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: #c6c6c6;
+    font-size: 15px;
+  }
+
+  img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  a {
+    color: #c6c6c6;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.bottomLine {
+  padding-top: 18px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 992px) {
+  .footerCard {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 692px) {
+  .footerWrapper {
+    max-width: 360px;
+    margin: 30px auto 0;
+  }
+
+  .footerCard {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
   .brandSection {
     img {
-      width: 250px;
+      width: 150px;
     }
+
     p {
-      margin-top: 15px;
-      margin-bottom: 5px;
-    }
-    .copyright {
-      color: #6c757d;
+      font-size: 14px;
     }
   }
+
+  .infoSection,
   .contactsSection {
-    img {
-      height: 24px;
-      margin: 0 10px;
+    h2 {
+      font-size: 17px;
     }
-    .location {
-      display: flex;
+
+    p,
+    div,
+    a,
+    span {
+      font-size: 14px;
     }
-    .phone {
-      display: flex;
-      margin: 15px 0;
-    }
-    .worktime {
-      display: flex;
-    }
-  }
-  .mediaSection {
-    text-align: center;
-    .downloadApp {
-      .storeButtons {
-        margin: 25px 35px 15px 35px;
-        display: flex;
-        justify-content: space-around;
-        img {
-          width: 120px;
-        }
-      }
-    }
-    .socialMedia {
-      h2 {
-        margin-bottom: 25px;
-      }
-      .socialIcons {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        img {
-          width: 40px;
-        }
-      }
-    }
-  }
-}
-@media (max-width: 768px) {
-  .footerInner {
-    grid-template-columns: 1fr;
-    height: auto;
-    gap: 24px;
-    padding-bottom: 30px;
   }
 
-  .mediaSection {
-    text-align: left;
-  }
-
-  .mediaSection .downloadApp .storeButtons {
-    justify-content: flex-start;
-    gap: 12px;
-    flex-wrap: wrap;
+  .bottomLine {
+    font-size: 12px;
+    line-height: 1.5;
   }
 }

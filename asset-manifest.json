@@ -1,32 +1,27 @@
 {
   "files": {
-    "main.css": "/react-pizza/static/css/main.c961424e.css",
-    "main.js": "/react-pizza/static/js/main.25847a07.js",
+    "main.css": "/react-pizza/static/css/main.9153c815.css",
+    "main.js": "/react-pizza/static/js/main.3ad54d7c.js",
+    "static/media/konstruktor.png": "/react-pizza/static/media/konstruktor.5468bc5de411601bf5a9.png",
+    "static/media/baner3.png": "/react-pizza/static/media/baner3.fdcdfd671b45881395f0.png",
+    "static/media/baner1.png": "/react-pizza/static/media/baner1.8d37a698322d466880d5.png",
     "static/media/sauce-bg.png": "/react-pizza/static/media/sauce-bg.53ba71a27acdd8b40906.png",
+    "static/media/baner2.png": "/react-pizza/static/media/baner2.d64672fe438f33f09ffc.png",
+    "static/media/logo.png": "/react-pizza/static/media/logo.ddf9ad97677ee65fe7d1.png",
     "static/media/AvenirNextCyr-Demi.eot": "/react-pizza/static/media/AvenirNextCyr-Demi.4b2189c473c87dbf4d5d.eot",
     "static/media/AvenirNextCyr-Demi.ttf": "/react-pizza/static/media/AvenirNextCyr-Demi.c234f5295ae22b8b0e28.ttf",
-    "static/media/konstruktor.webp": "/react-pizza/static/media/konstruktor.8dba578f8319ff914c49.webp",
-    "static/media/baner2.webp": "/react-pizza/static/media/baner2.42ec973af8fe6cb242e7.webp",
-    "static/media/baner1.webp": "/react-pizza/static/media/baner1.5a55dd940ba4587181b0.webp",
-    "static/media/baner3.webp": "/react-pizza/static/media/baner3.9f80c473c9eeef36784d.webp",
     "static/media/AvenirNextCyr-Demi.woff": "/react-pizza/static/media/AvenirNextCyr-Demi.4a392b4ac7128c077b27.woff",
     "static/media/AvenirNextCyr-Demi.woff2": "/react-pizza/static/media/AvenirNextCyr-Demi.f033b66b803cabbd66b5.woff2",
-    "static/media/logo.webp": "/react-pizza/static/media/logo.c009f6e59829b99e35a0.webp",
-    "static/media/appstore.webp": "/react-pizza/static/media/appstore.55966c7a5c59091e6cff.webp",
-    "static/media/googleplay.webp": "/react-pizza/static/media/googleplay.69ee3dc5df8e9e5c5814.webp",
-    "static/media/tiktok.svg": "/react-pizza/static/media/tiktok.8945c10c51afbbb5320b5682373e7c37.svg",
     "static/media/done-icon.svg": "/react-pizza/static/media/done-icon.113a4f004b5fc8b55e3100bc97379afa.svg",
-    "static/media/instagram.svg": "/react-pizza/static/media/instagram.bd94e1d490676a690477c88a4fdf7a6d.svg",
-    "static/media/youtube.svg": "/react-pizza/static/media/youtube.085ad1941b8475e98241060d8968c8a0.svg",
     "index.html": "/react-pizza/index.html",
     "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.1d12044f40d8ce5688f2b70ded44871b.svg",
     "static/media/plus.svg": "/react-pizza/static/media/plus.dba2202066d47b809f80c9d98305b7d6.svg",
     "static/media/minus.svg": "/react-pizza/static/media/minus.d376b6fc2a053305da96d80bfc510fcc.svg",
-    "main.c961424e.css.map": "/react-pizza/static/css/main.c961424e.css.map",
-    "main.25847a07.js.map": "/react-pizza/static/js/main.25847a07.js.map"
+    "main.9153c815.css.map": "/react-pizza/static/css/main.9153c815.css.map",
+    "main.3ad54d7c.js.map": "/react-pizza/static/js/main.3ad54d7c.js.map"
   },
   "entrypoints": [
-    "static/css/main.c961424e.css",
-    "static/js/main.25847a07.js"
+    "static/css/main.9153c815.css",
+    "static/js/main.3ad54d7c.js"
   ]
 }

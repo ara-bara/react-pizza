@@ -3,11 +3,11 @@ import quantityMinus from "../../assets/icons/minus.svg";
 import quantityPlus from "../../assets/icons/plus.svg";
 import picture from "../../assets/img/konstruktor.png";
 import Header from "../../components/Header/Header";
+import BackLink from "../../components/UI/BackLink/BackLink";
+import backStyles from "../../components/UI/BackLink/BackLink.module.scss";
 import SizePicker from "../../components/UI/SizePicker/SizePicker";
 import styles from "./PizzaConstructor.module.scss";
 import { ingredientsData } from "./ingredients";
-import BackLink from "../../components/UI/BackLink/BackLink";
-import backStyles from "../../components/UI/BackLink/BackLink.module.scss";
 
 const PizzaConstructor = ({
   addToOrder,
@@ -50,7 +50,7 @@ const PizzaConstructor = ({
           }
           return el;
         })
-        .filter(Boolean)
+        .filter(Boolean),
     );
   };
 
@@ -58,11 +58,10 @@ const PizzaConstructor = ({
     150 * sizeMultiplier[pizzaSize] +
     selectedIngredients.reduce(
       (sum, ingredient) => sum + ingredient.price * ingredient.quantity,
-      0
+      0,
     );
 
   const handleAddPizza = () => {
-
     const pizzaObject = {
       id: Date.now(),
       custom: true,
@@ -71,7 +70,7 @@ const PizzaConstructor = ({
       ingredients: selectedIngredients.map((i) => i.name),
       price: totalPrice,
       quantity: count,
-      picture: "konstruktor.webp",
+      picture: "konstruktor.png",
     };
 
     addToOrder(pizzaObject);

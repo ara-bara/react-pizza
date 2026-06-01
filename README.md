@@ -1,4 +1,4 @@
-# 🍕 Black Pizza — Premium Pizza Delivery App
+# 🍕 React Pizza — Premium Pizza Delivery App
 
 Modern pizza delivery web application built with React.
 The project includes a pizza catalog, pizza constructor, sauces section, cart system, checkout flow, recently viewed products, and a fully responsive premium dark UI.

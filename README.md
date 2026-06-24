@@ -1,26 +1,49 @@
-# 🍕 React Pizza — Premium Pizza Delivery App
 
-Modern pizza delivery web application built with React.
-The project includes a pizza catalog, pizza constructor, sauces section, cart system, checkout flow, recently viewed products, and a fully responsive premium dark UI.
+React Pizza — adaptive web application for online pizza ordering, developed as part of a Bachelor's qualification project.
 
-🔗 **Live Demo:** (https://ara-bara.github.io/react-pizza/)
+**Bachelor's Thesis Topic:**
+
+**"Development of an Adaptive Web Application for Pizza Ordering with Improved UX: Implementation of an Interactive Product Constructor"**
+
+The project was built using React and modern SPA development approaches. The application includes a pizza catalog, detailed product pages, an interactive pizza constructor, sauces catalog, shopping cart, checkout process, recently viewed products, and a fully responsive user interface.
+
+🔗 **Live Demo:** https://ara-bara.github.io/react-pizza/
+
+---
+
+## 🎓 Bachelor Thesis Project
+
+This project was developed as the practical part of a Bachelor's thesis for the specialty **122 Computer Science**.
+
+**Author:** Dmytro Valetskyi
+
+**Scientific Supervisor:** O.O. Onyshchuk
+
+**University:** Lesya Ukrainka Volyn National University
+
+**Year:** 2026
 
 ---
 
 ## 🚀 Live Features
 
 - Pizza catalog with detailed product pages
-- Pizza constructor with custom ingredients
+- Interactive pizza constructor
 - Dynamic pizza size pricing
-- Sauces catalog and sauce product pages
+- Ingredient selection and customization
+- Sauces catalog with dedicated product pages
 - Shopping cart with quantity controls
+- LocalStorage cart persistence
 - Sticky cart sidebar
-- Recently viewed pizzas
-- Similar products section
 - Checkout page with order summary
-- Automatic discount system
-- Responsive design for all devices
-- Smooth navigation with React Router
+- Automatic discount system (10% for orders over 1000 UAH)
+- Recently viewed products history
+- Similar products recommendations
+- Responsive burger navigation menu
+- Dynamic price calculation
+- Mobile-friendly interface
+- Smooth page navigation with React Router
+- Adaptive layout for desktop, tablet, and mobile devices
 
 ---
 
@@ -34,18 +57,21 @@ The project includes a pizza catalog, pizza constructor, sauces section, cart sy
 - React Hooks
 - Custom Hooks
 - Local State Management
+- LocalStorage API
 - Git & GitHub
 
 ---
 
 ## 🎨 UI / UX
 
-- Premium dark interface
-- Responsive adaptive layout
-- Mobile optimized cart
+- Modern dark-themed interface
+- Fully responsive design
+- Mobile-optimized navigation
+- Interactive product cards
 - Smooth hover animations
-- Modern delivery-app inspired design
-- Custom product cards and buttons
+- User-friendly ordering process
+- Consistent visual design
+- Adaptive layouts for different screen sizes
 
 ---
 
@@ -56,6 +82,7 @@ The project includes a pizza catalog, pizza constructor, sauces section, cart sy
 - Pizza constructor
 - Sauces page
 - Sauce product page
+- Shopping cart
 - Checkout page
 
 ---
@@ -64,24 +91,37 @@ The project includes a pizza catalog, pizza constructor, sauces section, cart sy
 
 ### Cart System
 
-- Add/remove products
+- Add products to cart
+- Remove products from cart
 - Quantity controls
-- Automatic total calculation
-- Dynamic discounts
+- Automatic price calculation
+- Dynamic discount calculation
 - Sauce support inside cart
 - Constructor pizza support
+- Persistent cart storage using LocalStorage
 
 ### Pizza Constructor
 
 - Choose pizza size
-- Add/remove ingredients
+- Add and remove ingredients
 - Dynamic price calculation
 - Ingredient quantity controls
+- Real-time order customization
 
-### Recently Viewed
+### Recently Viewed Products
 
-- Stores viewed pizzas
+- Stores recently viewed pizzas
 - Quick access to previously opened products
+- LocalStorage integration
+
+### Additional Features
+
+- Similar product recommendations
+- Responsive navigation menu
+- Automatic order summary generation
+- Dynamic UI updates
+- SPA architecture
+- Client-side routing
 
 ---
 
@@ -89,9 +129,11 @@ The project includes a pizza catalog, pizza constructor, sauces section, cart sy
 
 The project is fully optimized for:
 
-- Desktop
-- Tablet
+- Desktop devices
+- Tablets
 - Mobile devices
+
+Responsive breakpoints ensure comfortable interaction across all supported screen sizes.
 
 ---
 
@@ -111,7 +153,12 @@ npm start
 
 ## 👨‍💻 Author
 
-Dmytro Valetskyi
+**Dmytro Valetskyi**
 
-GitHub:
-[https://github.com/ara-bara/react-pizza](https://github.com/ara-bara/react-pizza)
+GitHub: https://github.com/ara-bara
+
+---
+
+## 📄 License
+
+This project was created for educational and research purposes as part of a Bachelor's qualification work.

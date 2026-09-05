@@ -11,7 +11,7 @@
   gap: 36px;
   padding: 32px 36px;
   color: #fff;
-  background: linear-gradient(145deg, #1d1d1d, #151515);
+  background: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
@@ -21,6 +21,7 @@
   img {
     width: 170px;
     margin-bottom: 18px;
+    mix-blend-mode: lighten;
   }
 
   p {

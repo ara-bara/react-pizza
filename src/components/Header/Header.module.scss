@@ -33,9 +33,14 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  min-width: 0;
+  mix-blend-mode: lighten;
 
   img {
-    width: 260px;
+    width: 240px;
+    max-width: 100%;
+    height: 72px;
+    object-fit: contain;
     display: block;
   }
 }
@@ -170,7 +175,7 @@
   .inner {
     padding: 0 16px;
     display: grid;
-    grid-template-columns: 40px 1fr auto;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
     align-items: center;
   }
 
@@ -179,6 +184,7 @@
 
     img {
       width: 170px;
+      height: 60px;
     }
   }
 
@@ -276,11 +282,12 @@
 
   .inner {
     padding: 0 12px;
-    grid-template-columns: 36px 1fr auto;
+    grid-template-columns: 36px minmax(0, 1fr) auto;
   }
 
   .logo img {
     width: 145px;
+    height: 54px;
   }
 
   .basket {

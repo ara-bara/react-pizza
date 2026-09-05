@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-pizza/static/css/main.9153c815.css",
-    "main.js": "/react-pizza/static/js/main.d9535518.js",
+    "main.css": "/react-pizza/static/css/main.2278f602.css",
+    "main.js": "/react-pizza/static/js/main.50b1aaeb.js",
     "static/media/konstruktor.png": "/react-pizza/static/media/konstruktor.5468bc5de411601bf5a9.png",
     "static/media/baner3.png": "/react-pizza/static/media/baner3.fdcdfd671b45881395f0.png",
     "static/media/baner1.png": "/react-pizza/static/media/baner1.8d37a698322d466880d5.png",
@@ -17,11 +17,11 @@
     "static/media/close-icon.svg": "/react-pizza/static/media/close-icon.1d12044f40d8ce5688f2b70ded44871b.svg",
     "static/media/plus.svg": "/react-pizza/static/media/plus.dba2202066d47b809f80c9d98305b7d6.svg",
     "static/media/minus.svg": "/react-pizza/static/media/minus.d376b6fc2a053305da96d80bfc510fcc.svg",
-    "main.9153c815.css.map": "/react-pizza/static/css/main.9153c815.css.map",
-    "main.d9535518.js.map": "/react-pizza/static/js/main.d9535518.js.map"
+    "main.2278f602.css.map": "/react-pizza/static/css/main.2278f602.css.map",
+    "main.50b1aaeb.js.map": "/react-pizza/static/js/main.50b1aaeb.js.map"
   },
   "entrypoints": [
-    "static/css/main.9153c815.css",
-    "static/js/main.d9535518.js"
+    "static/css/main.2278f602.css",
+    "static/js/main.50b1aaeb.js"
   ]
 }
